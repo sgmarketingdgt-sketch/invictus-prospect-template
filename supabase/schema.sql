@@ -53,6 +53,8 @@ CREATE TABLE IF NOT EXISTS leads (
 
   -- Sinais Maps
   maps_nota             text,
+  maps_avaliacoes       text,
+  maps_fotos            text,
   maps_recencia_dias    text,
   maps_nrl              text,
 

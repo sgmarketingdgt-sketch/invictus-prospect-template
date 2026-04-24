@@ -34,7 +34,7 @@ import re
 import sys
 import time
 import unicodedata
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 try:
@@ -219,6 +219,8 @@ def montar_payload_insert(lead: dict, agencia: str, segmento: str, cidade: str |
         "dono": lead.get("dono"),
         "dono_fonte": lead.get("dono_fonte"),
         "maps_nota": lead.get("maps_nota"),
+        "maps_avaliacoes": lead.get("maps_avaliacoes"),
+        "maps_fotos": lead.get("maps_fotos"),
         "maps_recencia_dias": lead.get("maps_recencia_dias"),
         "maps_nrl": lead.get("maps_nrl"),
         "nicho_cliente": lead.get("nicho_cliente"),
@@ -235,14 +237,14 @@ def montar_payload_insert(lead: dict, agencia: str, segmento: str, cidade: str |
         "notes": [],
         "activity": [],
         "novo_nesta_rodada": True,
-        "first_seen_at": datetime.utcnow().isoformat() + "Z",
-        "last_seen_at": datetime.utcnow().isoformat() + "Z",
+        "first_seen_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
+        "last_seen_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
     }
 
 
 def montar_payload_update(lead: dict) -> dict:
     """Atualização diferencial: somente campos voláteis + last_seen_at."""
-    payload = {"last_seen_at": datetime.utcnow().isoformat() + "Z"}
+    payload = {"last_seen_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.%fZ")}
     for campo in CAMPOS_VOLATEIS:
         if campo in lead and lead[campo] is not None:
             payload[campo] = lead[campo]
@@ -294,7 +296,7 @@ def registrar_execucao(cfg: dict, extraidos: int, novos: int, existentes: int, d
         "leads_novos": novos,
         "leads_existentes": existentes,
         "duracao_segundos": int(duracao),
-        "data_execucao": datetime.utcnow().isoformat() + "Z",
+        "data_execucao": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
     }
     url = f"{cfg['url']}/rest/v1/execucoes"
     resp = requests.post(url, headers=headers_supabase(cfg["key"]), json=payload, timeout=30)
@@ -375,21 +377,23 @@ def main() -> int:
             duracao=time.time() - inicio,
         )
 
-    out_path = args.input
-    payload_out = {
-        "leads": leads_locais,
-        "sync": {
-            "agencia": cfg["agencia"],
-            "segmento": cfg["segmento"],
-            "novos": len(novos),
-            "existentes_preservados": len(para_atualizar),
-            "executado_em": datetime.utcnow().isoformat() + "Z",
-            "dry_run": args.dry_run,
-        },
-    }
-    with out_path.open("w", encoding="utf-8") as fh:
-        json.dump(payload_out, fh, ensure_ascii=False, indent=2)
-    print(f"[ok] {out_path.name} atualizado com flags novo_nesta_rodada")
+    if args.dry_run:
+        print("[dry-run] leads_final.json NAO foi modificado")
+    else:
+        out_path = args.input
+        payload_out = {
+            "leads": leads_locais,
+            "sync": {
+                "agencia": cfg["agencia"],
+                "segmento": cfg["segmento"],
+                "novos": len(novos),
+                "existentes_preservados": len(para_atualizar),
+                "executado_em": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
+            },
+        }
+        with out_path.open("w", encoding="utf-8") as fh:
+            json.dump(payload_out, fh, ensure_ascii=False, indent=2)
+        print(f"[ok] {out_path.name} atualizado com flags novo_nesta_rodada")
 
     print()
     print(f"[fim] {time.time() - inicio:.1f}s")

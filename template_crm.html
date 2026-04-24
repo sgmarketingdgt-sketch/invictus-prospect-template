@@ -786,11 +786,12 @@
 
   function renderDossierBody(lead) {
     const body = document.getElementById('dossier-body');
+    const isActive = (id) => id === activeTab ? 'active' : '';
     body.innerHTML = `
-      <div class="tab-panel active" data-panel="geral">${renderTabGeral(lead)}</div>
-      <div class="tab-panel" data-panel="rapport">${renderTabRapport(lead)}</div>
-      <div class="tab-panel" data-panel="dor">${renderTabDor(lead)}</div>
-      <div class="tab-panel" data-panel="atividade">${renderTabAtividade(lead)}</div>
+      <div class="tab-panel ${isActive('geral')}" data-panel="geral">${renderTabGeral(lead)}</div>
+      <div class="tab-panel ${isActive('rapport')}" data-panel="rapport">${renderTabRapport(lead)}</div>
+      <div class="tab-panel ${isActive('dor')}" data-panel="dor">${renderTabDor(lead)}</div>
+      <div class="tab-panel ${isActive('atividade')}" data-panel="atividade">${renderTabAtividade(lead)}</div>
     `;
     initDossierInteractions(lead);
   }
