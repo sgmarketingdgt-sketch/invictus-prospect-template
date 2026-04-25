@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prospeccao | Ethos Growth</title>
-<meta name="description" content="CRM interno de prospeccao de leads - Ethos Growth">
-<meta property="og:title" content="Prospeccao | Ethos Growth">
+<title>Prospecção | Ethos Growth</title>
+<meta name="description" content="CRM interno de prospecção de leads - Ethos Growth">
+<meta property="og:title" content="Prospecção | Ethos Growth">
 <meta property="og:description" content="CRM interno - certificadoras BH">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230A0A0A'/%3E%3Cpath d='M30 30h40v8H38v14h28v8H38v14h32v8H30z' fill='%233B82F6'/%3E%3C/svg%3E">
@@ -94,6 +94,7 @@
   .st-abordado { color: #3B82F6; background: rgba(59,130,246,0.12); border-color: rgba(59,130,246,0.3); }
   .st-respondeu { color: #A78BFA; background: rgba(139,92,246,0.12); border-color: rgba(139,92,246,0.3); }
   .st-agendado { color: #FBBF24; background: rgba(245,158,11,0.12); border-color: rgba(245,158,11,0.3); }
+  .st-proposta { color: #22D3EE; background: rgba(6,182,212,0.12); border-color: rgba(6,182,212,0.3); }
   .st-ganhou { color: #34D399; background: rgba(16,185,129,0.12); border-color: rgba(16,185,129,0.3); }
   .st-perdeu { color: #F87171; background: rgba(239,68,68,0.12); border-color: rgba(239,68,68,0.3); }
 
@@ -212,7 +213,7 @@
       </div>
       <div class="hidden md:flex items-baseline gap-2">
         <span class="font-display text-[15px] tracking-tight">Ethos</span>
-        <span class="text-ink-dim text-[13px] font-ui">Prospeccao</span>
+        <span class="text-ink-dim text-[13px] font-ui">Prospecção</span>
       </div>
     </div>
     <!-- Breadcrumb -->
@@ -229,7 +230,7 @@
     <!-- Search (abre palette) -->
     <button id="btn-search" class="ml-auto flex items-center gap-2 px-3 py-2 bg-panel hover:bg-panel-hover border border-line hover:border-line-hover rounded-lg text-[13px] text-ink-muted transition-colors min-w-[200px] max-w-[280px]">
       <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-      <span class="flex-1 text-left">Buscar lead ou acao</span>
+      <span class="flex-1 text-left">Buscar lead ou ação</span>
       <span class="flex items-center gap-1"><kbd>Ctrl</kbd><kbd>K</kbd></span>
     </button>
     <!-- Acoes -->
@@ -263,7 +264,7 @@
     <button class="chip" data-filter="dono">Com dono</button>
     <button class="chip" data-filter="cnpj">CNPJ oficial</button>
     <button class="chip" data-filter="meta">Anuncia Meta</button>
-    <button class="chip" data-filter="prio">Priority 70+</button>
+    <button class="chip" data-filter="prio">Prioridade 70+</button>
     <div class="h-5 w-px bg-line mx-2"></div>
     <select id="filter-cidade" class="chip" style="padding: 6px 11px;">
       <option value="">Todas as cidades</option>
@@ -290,7 +291,7 @@
   </div>
   <!-- Tabs -->
   <div class="flex-shrink-0 px-6 border-b border-line flex items-center">
-    <button class="tab-btn active" data-tab="geral">Visao Geral</button>
+    <button class="tab-btn active" data-tab="geral">Visão Geral</button>
     <button class="tab-btn" data-tab="rapport">Rapport Humano</button>
     <button class="tab-btn" data-tab="dor">Ganchos de Dor</button>
     <button class="tab-btn" data-tab="atividade">Atividade</button>
@@ -308,7 +309,7 @@
 <div id="palette" class="fixed top-1/2 left-1/2 w-[640px] max-w-[92vw] bg-panel-deep border border-line rounded-xl shadow-2xl z-[70] overflow-hidden" style="display: none;">
   <div class="flex items-center gap-3 px-5 py-4 border-b border-line">
     <svg class="w-4 h-4 text-ink-dim flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-    <input id="palette-input" type="text" placeholder="Busque por nome, dono, bairro, acao..." autocomplete="off" class="flex-1 bg-transparent text-[14px] text-ink placeholder:text-ink-faded font-body outline-none">
+    <input id="palette-input" type="text" placeholder="Busque por nome, dono, bairro, ação..." autocomplete="off" class="flex-1 bg-transparent text-[14px] text-ink placeholder:text-ink-faded font-body outline-none">
     <kbd>ESC</kbd>
   </div>
   <div id="palette-list" class="max-h-[420px] overflow-y-auto p-2">
@@ -320,7 +321,7 @@
 <div id="confirm-backdrop" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[80] hidden-force">
   <div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px] max-w-[92vw] bg-panel-deep border border-line rounded-xl p-6 anim-scale">
     <h3 class="font-display text-[18px] mb-2">Resetar pipeline?</h3>
-    <p class="text-[13px] text-ink-muted leading-relaxed">Isso vai apagar todo o status de cada lead, suas notas e historico de atividade. A base dos 50 leads continua intacta.</p>
+    <p class="text-[13px] text-ink-muted leading-relaxed">Isso vai apagar todo o status de cada lead, suas notas e histórico de atividade. A base dos leads continua intacta.</p>
     <div class="flex items-center gap-2 mt-5 justify-end">
       <button id="confirm-cancel" class="action-pill">Cancelar</button>
       <button id="confirm-ok" class="action-pill" style="background: #EF4444; border-color: #EF4444; color: white;">Resetar</button>
@@ -471,12 +472,13 @@
   // ==========================================================================
   const LS_KEY = 'ethos_crm_bh_2026_04_22';
   const STATUSES = [
-    { id: 'novo',       label: 'Novo',       color: '#737373' },
-    { id: 'abordado',   label: 'Abordado',   color: '#3B82F6' },
-    { id: 'respondeu',  label: 'Respondeu',  color: '#8B5CF6' },
-    { id: 'agendado',   label: 'Agendado',   color: '#F59E0B' },
-    { id: 'ganhou',     label: 'Ganhou',     color: '#10B981' },
-    { id: 'perdeu',     label: 'Perdeu',     color: '#EF4444' },
+    { id: 'novo',       label: 'Novo',             color: '#737373' },
+    { id: 'abordado',   label: 'Abordado',         color: '#3B82F6' },
+    { id: 'respondeu',  label: 'Respondeu',        color: '#8B5CF6' },
+    { id: 'agendado',   label: 'Agendado',         color: '#F59E0B' },
+    { id: 'proposta',   label: 'Proposta enviada', color: '#06B6D4' },
+    { id: 'ganhou',     label: 'Ganhou',           color: '#10B981' },
+    { id: 'perdeu',     label: 'Perdeu',           color: '#EF4444' },
   ];
 
   // Cores pseudo-randomicas pra avatar (via hash do nome)
@@ -487,7 +489,7 @@
   // ==========================================================================
   let state = loadState();
   let filters = {
-    naoContactados: CLOUD_MODE,   // ativo por padrão em modo cloud
+    naoContactados: false,
     novosNestaRodada: false,
     ig: false, wa: false, dono: false, cnpj: false, meta: false, prio: false, cidade: ''
   };
@@ -733,7 +735,7 @@
         <div class="flex-1 min-w-0">
           <h2 class="font-display text-[20px] leading-tight mb-1">${esc(lead.nome)}</h2>
           ${lead.razao_social ? `<p class="text-[12px] text-ink-dim font-body truncate">${esc(lead.razao_social)}</p>` : ''}
-          ${dono ? `<p class="text-[12.5px] text-ink-muted mt-1 truncate"><span class="text-ink-dim">Dono:</span> <span class="text-ink">${esc(dono)}</span> ${fonte ? `<span class="text-ink-faded text-[11px] ml-1">${fonteLabel}</span>` : ''}</p>` : '<p class="text-[12.5px] text-ink-dim mt-1 italic">Dono nao identificado</p>'}
+          ${dono ? `<p class="text-[12.5px] text-ink-muted mt-1 truncate"><span class="text-ink-dim">Dono:</span> <span class="text-ink">${esc(dono)}</span> ${fonte ? `<span class="text-ink-faded text-[11px] ml-1">${fonteLabel}</span>` : ''}</p>` : '<p class="text-[12.5px] text-ink-dim mt-1 italic">Dono não identificado</p>'}
         </div>
         <button id="btn-close-dossier" class="text-ink-dim hover:text-ink p-1" aria-label="Fechar">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
@@ -810,12 +812,12 @@
         <span class="info-v flex items-center gap-2">
           <span class="mono">${esc(wa || '—')}</span>
           ${wa ? `<button class="copy-btn text-[10px] px-2 py-0.5 bg-panel border border-line rounded text-ink-dim hover:text-ink hover:border-line-hover" data-copy="${esc(wa)}">copiar</button>` : ''}
-          ${l.whatsapp_ativo ? '<span class="badge st-ganhou ml-1">validado</span>' : '<span class="badge st-novo">nao ativo</span>'}
+          ${l.whatsapp_ativo ? '<span class="badge st-ganhou ml-1">validado</span>' : '<span class="badge st-novo">não ativo</span>'}
           ${l.whatsapp_perfil_nome ? `<span class="text-[11px] text-ink-dim">"${esc(l.whatsapp_perfil_nome)}"</span>` : ''}
         </span>
       </div>
       <div class="info-row">
-        <span class="info-k">Endereco</span>
+        <span class="info-k">Endereço</span>
         <span class="info-v">${esc(l.endereco_completo || '—')}</span>
       </div>
       <div class="info-row">
@@ -825,13 +827,13 @@
     </section>
 
     <section class="mb-6">
-      <h3 class="font-display text-[11px] uppercase tracking-[0.12em] text-ink-faded mb-3">Empresa (CNPJ publico)</h3>
+      <h3 class="font-display text-[11px] uppercase tracking-[0.12em] text-ink-faded mb-3">Empresa (CNPJ público)</h3>
       <div class="info-row">
         <span class="info-k">CNPJ</span>
         <span class="info-v mono">${esc(fmtCnpj(l.cnpj))} ${l.cnpj_fonte ? `<span class="text-[10px] text-ink-dim ml-1">via ${esc(l.cnpj_fonte)}</span>` : ''}</span>
       </div>
       <div class="info-row">
-        <span class="info-k">Razao Social</span>
+        <span class="info-k">Razão Social</span>
         <span class="info-v">${esc(l.razao_social || '—')}</span>
       </div>
       <div class="info-row">
@@ -851,7 +853,7 @@
         <span class="info-v mono">${esc(fmtMoney(l.capital_social))}</span>
       </div>
       <div class="info-row">
-        <span class="info-k">Situacao</span>
+        <span class="info-k">Situação</span>
         <span class="info-v">${esc(l.situacao_receita || '—')}</span>
       </div>
       ${l.socios_cnpj && l.socios_cnpj.length > 0 ? `
@@ -877,14 +879,14 @@
       <h3 class="font-display text-[11px] uppercase tracking-[0.12em] text-ink-faded mb-3">Sinais do Google Maps</h3>
       <div class="info-row">
         <span class="info-k">Nota</span>
-        <span class="info-v nums">${esc(l.maps_nota || '—')} <span class="text-ink-dim">(${esc(l.maps_avaliacoes || 0)} avaliacoes)</span></span>
+        <span class="info-v nums">${esc(l.maps_nota || '—')} <span class="text-ink-dim">(${esc(l.maps_avaliacoes || 0)} avaliações)</span></span>
       </div>
       <div class="info-row">
         <span class="info-k">Fotos</span>
         <span class="info-v nums">${esc(l.maps_fotos || 0)}</span>
       </div>
       <div class="info-row">
-        <span class="info-k">Ultima review</span>
+        <span class="info-k">Última review</span>
         <span class="info-v">${l.maps_recencia_dias ? `ha ${esc(l.maps_recencia_dias)} dias` : '—'}</span>
       </div>
       <div class="info-row">
@@ -904,7 +906,7 @@
         <span class="info-v">${renderSignal(l.anuncia_google)}</span>
       </div>
       <div class="info-row">
-        <span class="info-k">Priority score</span>
+        <span class="info-k">Score de prioridade</span>
         <span class="info-v"><span class="prio-pill ${prioClass(Math.round(l.priority_score||0))} nums">${Math.round(l.priority_score || 0)}</span></span>
       </div>
     </section>
@@ -914,7 +916,7 @@
   function renderSignal(v) {
     if (v === 'sim') return '<span class="badge st-ganhou">Sim</span>';
     if (v === 'nao' || v === 'nao_encontrado') return '<span class="badge st-perdeu">Nao</span>';
-    return `<span class="text-ink-dim text-[12px]">${esc(v || 'nao verificado')}</span>`;
+    return `<span class="text-ink-dim text-[12px]">${esc(v || 'não verificado')}</span>`;
   }
 
   function renderTabRapport(l) {
@@ -923,7 +925,7 @@
     return `
     ${r.length > 0 ? `
     <section class="mb-6">
-      <h3 class="font-display text-[11px] uppercase tracking-[0.12em] text-ink-faded mb-3">Pontos de conexao humana</h3>
+      <h3 class="font-display text-[11px] uppercase tracking-[0.12em] text-ink-faded mb-3">Pontos de conexão humana</h3>
       <ol class="space-y-3 list-none">
         ${r.map((item, i) => `
           <li class="flex gap-3 text-[13.5px] leading-relaxed text-ink">
@@ -932,15 +934,15 @@
           </li>
         `).join('')}
       </ol>
-    </section>` : `<p class="text-ink-dim text-[13px] italic mb-6">Nenhum dado de rapport humano disponivel.</p>`}
+    </section>` : `<p class="text-ink-dim text-[13px] italic mb-6">Nenhum dado de rapport humano disponível.</p>`}
 
     <section class="mb-6">
       <h3 class="font-display text-[11px] uppercase tracking-[0.12em] text-ink-faded mb-3">Contexto de negocio</h3>
       <div class="info-row"><span class="info-k">Tempo de mercado</span><span class="info-v">${esc(l.tempo_mercado || '—')}</span></div>
       <div class="info-row"><span class="info-k">Nicho cliente</span><span class="info-v">${esc(l.nicho_cliente || '—')}</span></div>
-      <div class="info-row"><span class="info-k">Bairro atuacao</span><span class="info-v">${esc(l.bairro || '—')}</span></div>
-      <div class="info-row"><span class="info-k">Equipe visivel</span><span class="info-v">${esc(l.equipe_visivel || '—')}</span></div>
-      <div class="info-row"><span class="info-k">Tom respostas Maps</span><span class="info-v">${esc(l.tom_respostas_maps || '—')}</span></div>
+      <div class="info-row"><span class="info-k">Bairro de atuação</span><span class="info-v">${esc(l.bairro || '—')}</span></div>
+      <div class="info-row"><span class="info-k">Equipe visível</span><span class="info-v">${esc(l.equipe_visivel || '—')}</span></div>
+      <div class="info-row"><span class="info-k">Tom das respostas no Maps</span><span class="info-v">${esc(l.tom_respostas_maps || '—')}</span></div>
     </section>
 
     ${ig.handle ? `
@@ -948,7 +950,7 @@
       <h3 class="font-display text-[11px] uppercase tracking-[0.12em] text-ink-faded mb-3">Instagram</h3>
       <div class="info-row"><span class="info-k">Handle</span><span class="info-v">${ig.url ? `<a href="${esc(ig.url)}" target="_blank" rel="noopener" class="text-accent hover:underline">${esc(ig.handle)}</a>` : esc(ig.handle)}</span></div>
       <div class="info-row"><span class="info-k">Bio</span><span class="info-v">${esc(ig.bio || '—')}</span></div>
-      <div class="info-row"><span class="info-k">Frequencia</span><span class="info-v">${esc(ig.frequencia || '—')}</span></div>
+      <div class="info-row"><span class="info-k">Frequência</span><span class="info-v">${esc(ig.frequencia || '—')}</span></div>
       ${(ig.posts_recentes || []).length > 0 ? `
       <div class="info-row">
         <span class="info-k">Posts recentes</span>
@@ -1012,7 +1014,7 @@
     <section class="mb-6">
       <h3 class="font-display text-[11px] uppercase tracking-[0.12em] text-ink-faded mb-3">Adicionar nota</h3>
       <form id="note-form" class="mb-4">
-        <textarea id="note-input" placeholder="Anotacao rapida - o que conversou, proximos passos, observacoes..." rows="3" class="w-full bg-panel border border-line rounded-lg p-3 text-[13px] text-ink placeholder:text-ink-faded resize-none font-body focus:outline-none focus:border-accent transition-colors"></textarea>
+        <textarea id="note-input" placeholder="Anotação rápida: o que conversou, próximos passos, observações..." rows="3" class="w-full bg-panel border border-line rounded-lg p-3 text-[13px] text-ink placeholder:text-ink-faded resize-none font-body focus:outline-none focus:border-accent transition-colors"></textarea>
         <div class="flex items-center justify-end mt-2 gap-2">
           <button type="submit" class="action-pill" style="background: #3B82F6; color: white; border-color: #3B82F6;">Adicionar</button>
         </div>
@@ -1409,9 +1411,6 @@
     document.getElementById('btn-execucoes').classList.remove('hidden');
     document.getElementById('chip-nao-contactados').style.display = '';
     document.getElementById('chip-novos').style.display = '';
-    // Pre-marcar chip "naoContactados" como ativo
-    const chip = document.querySelector('.chip[data-filter="naoContactados"]');
-    if (chip && filters.naoContactados) chip.classList.add('active');
 
     if (!supabaseClient) {
       setSyncStatus('Aguardando lib...', '#F59E0B');
