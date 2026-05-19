@@ -1,0 +1,452 @@
+[
+  {
+    "id": 1,
+    "nome": "ATC - Faculdade de Aviação Civil",
+    "anuncia_meta": "nao",
+    "meta_ads_count": 0,
+    "meta_metodo": "texto_pagina",
+    "anuncia_google": "sim",
+    "google_metodo": "cards_dominio"
+  },
+  {
+    "id": 2,
+    "nome": "Flight Class",
+    "anuncia_meta": "nao",
+    "meta_ads_count": 0,
+    "meta_metodo": "texto_pagina",
+    "anuncia_google": "nao",
+    "google_metodo": "texto_dominio"
+  },
+  {
+    "id": 3,
+    "nome": "VelAir Escola de Aviação Civil",
+    "anuncia_meta": "sim",
+    "meta_ads_count": 1,
+    "meta_metodo": "contador_pagina",
+    "anuncia_google": "nao",
+    "google_metodo": "texto_dominio"
+  },
+  {
+    "id": 4,
+    "nome": "Grandis Soluções - Consultoria Aeronáutica e Cursos para Pilotos e Comissários de voo",
+    "anuncia_meta": "nao",
+    "meta_ads_count": 0,
+    "meta_metodo": "texto_pagina",
+    "anuncia_google": "nao",
+    "google_metodo": "texto_dominio"
+  },
+  {
+    "id": 5,
+    "nome": "Sky Escola de Aeronáutica",
+    "anuncia_meta": "nao",
+    "meta_ads_count": 0,
+    "meta_metodo": "texto_pagina",
+    "anuncia_google": "nao",
+    "google_metodo": "texto_dominio"
+  },
+  {
+    "id": 6,
+    "nome": "Aerocurso - Escola de Aviação Civil | CIAC 22",
+    "anuncia_meta": "nao",
+    "meta_ads_count": 0,
+    "meta_metodo": "texto_pagina",
+    "anuncia_google": "nao",
+    "google_metodo": "texto_dominio"
+  },
+  {
+    "id": 7,
+    "nome": "EPEAC Aviação",
+    "anuncia_meta": "nao",
+    "meta_ads_count": 0,
+    "meta_metodo": "texto_pagina",
+    "anuncia_google": "nao",
+    "google_metodo": "texto_dominio"
+  },
+  {
+    "id": 8,
+    "nome": "Aero Agrícola Santos Dumont",
+    "anuncia_meta": "sim",
+    "meta_ads_count": 3,
+    "meta_metodo": "contador_pagina",
+    "anuncia_google": "nao",
+    "google_metodo": "texto_dominio"
+  },
+  {
+    "id": 9,
+    "nome": "DH Escola de Aviação Civil",
+    "anuncia_meta": "nao",
+    "meta_ads_count": 0,
+    "meta_metodo": "texto_pagina",
+    "anuncia_google": "nao",
+    "google_metodo": "texto_dominio"
+  },
+  {
+    "id": 10,
+    "nome": "Go Air Escola de Aviação Civil",
+    "anuncia_meta": "nao",
+    "meta_ads_count": 0,
+    "meta_metodo": "texto_pagina",
+    "anuncia_google": "nao",
+    "google_metodo": "texto_dominio"
+  },
+  {
+    "id": 11,
+    "nome": "Bravo Escola de Aviação Civil",
+    "anuncia_meta": "nao",
+    "meta_ads_count": 0,
+    "meta_metodo": "texto_pagina",
+    "anuncia_google": "nao",
+    "google_metodo": "texto_sem_resultado_nome"
+  },
+  {
+    "id": 12,
+    "nome": "BrasFlight Escola Brasileira de Aviação Ltda",
+    "anuncia_meta": "nao",
+    "meta_ads_count": 0,
+    "meta_metodo": "texto_pagina",
+    "anuncia_google": "nao",
+    "google_metodo": "texto_dominio"
+  },
+  {
+    "id": 13,
+    "nome": "Airtraining Escola de Aviação Civil",
+    "anuncia_meta": "nao",
+    "meta_ads_count": 0,
+    "meta_metodo": "texto_pagina",
+    "anuncia_google": "nao",
+    "google_metodo": "texto_dominio"
+  },
+  {
+    "id": 14,
+    "nome": "Vertical Escola de Aviação Civil Ltda.",
+    "anuncia_meta": "nao",
+    "meta_ads_count": 0,
+    "meta_metodo": "texto_pagina",
+    "anuncia_google": "nao",
+    "google_metodo": "texto_sem_resultado_nome"
+  },
+  {
+    "id": 15,
+    "nome": "Sky Eagles",
+    "anuncia_meta": "sim",
+    "meta_ads_count": 93,
+    "meta_metodo": "contador_pagina",
+    "anuncia_google": "nao",
+    "google_metodo": "texto_sem_resultado_nome"
+  },
+  {
+    "id": 16,
+    "nome": "Voe Mais Escola de Aeronáutica",
+    "anuncia_meta": "sim",
+    "meta_ads_count": 16,
+    "meta_metodo": "contador_pagina",
+    "anuncia_google": "nao",
+    "google_metodo": "texto_dominio"
+  },
+  {
+    "id": 17,
+    "nome": "Ícaro Aviação",
+    "anuncia_meta": "sim",
+    "meta_ads_count": 5,
+    "meta_metodo": "contador_pagina",
+    "anuncia_google": "sim",
+    "google_metodo": "cards_dominio"
+  },
+  {
+    "id": 18,
+    "nome": "Starflight Escola de Aviação Civil",
+    "anuncia_meta": "nao",
+    "meta_ads_count": 0,
+    "meta_metodo": "texto_pagina",
+    "anuncia_google": "nao",
+    "google_metodo": "texto_dominio"
+  },
+  {
+    "id": 19,
+    "nome": "Escola Piloto de Engenharia Química",
+    "anuncia_meta": "nao",
+    "meta_ads_count": 0,
+    "meta_metodo": "texto_pagina",
+    "anuncia_google": "nao",
+    "google_metodo": "texto_dominio"
+  },
+  {
+    "id": 20,
+    "nome": "Escola para Piloto de Avião",
+    "anuncia_meta": "sim",
+    "meta_ads_count": 46,
+    "meta_metodo": "contador_pagina",
+    "anuncia_google": "nao",
+    "google_metodo": "texto_dominio"
+  },
+  {
+    "id": 21,
+    "nome": "Auto Escola Piloto - Torre",
+    "anuncia_meta": "sim",
+    "meta_ads_count": 27,
+    "meta_metodo": "contador_pagina",
+    "anuncia_google": "sim",
+    "google_metodo": "cards_dominio"
+  },
+  {
+    "id": 22,
+    "nome": "Aero São José dos Campos | Escola de Aviação | Ciac | Aeroclube | Comissário de Voo | Mecânico | Piloto avião Helicóptero",
+    "anuncia_meta": "sim",
+    "meta_ads_count": 19,
+    "meta_metodo": "contador_pagina",
+    "anuncia_google": "nao",
+    "google_metodo": "texto_dominio"
+  },
+  {
+    "id": 23,
+    "nome": "Aeroclube de Londrina",
+    "anuncia_meta": "nao",
+    "meta_ads_count": 0,
+    "meta_metodo": "texto_pagina",
+    "anuncia_google": "nao",
+    "google_metodo": "texto_dominio"
+  },
+  {
+    "id": 24,
+    "nome": "Sierra Bravo Escola de Aviação",
+    "anuncia_meta": "sim",
+    "meta_ads_count": 1,
+    "meta_metodo": "contador_pagina",
+    "anuncia_google": "sim",
+    "google_metodo": "cards_dominio"
+  },
+  {
+    "id": 25,
+    "nome": "Escola Aero - Por Trás da Aviação",
+    "anuncia_meta": "sim",
+    "meta_ads_count": 36,
+    "meta_metodo": "contador_pagina",
+    "anuncia_google": "sim",
+    "google_metodo": "cards_dominio"
+  },
+  {
+    "id": 26,
+    "nome": "BSB Aviation Escola de Aviação Civil Ltda.",
+    "anuncia_meta": "nao",
+    "meta_ads_count": 0,
+    "meta_metodo": "texto_pagina",
+    "anuncia_google": "nao",
+    "google_metodo": "texto_sem_resultado_nome"
+  },
+  {
+    "id": 27,
+    "nome": "Academia de Pilotos",
+    "anuncia_meta": "sim",
+    "meta_ads_count": 66,
+    "meta_metodo": "contador_pagina",
+    "anuncia_google": "nao",
+    "google_metodo": "texto_sem_resultado_nome"
+  },
+  {
+    "id": 28,
+    "nome": "Aeroclube de Voo A Vela CTA - CVV-CTA",
+    "anuncia_meta": "sim",
+    "meta_ads_count": 1,
+    "meta_metodo": "contador_pagina",
+    "anuncia_google": "nao",
+    "google_metodo": "texto_dominio"
+  },
+  {
+    "id": 29,
+    "nome": "Aeroclube do Paraná",
+    "anuncia_meta": "sim",
+    "meta_ads_count": 1,
+    "meta_metodo": "contador_pagina",
+    "anuncia_google": "nao",
+    "google_metodo": "texto_dominio"
+  },
+  {
+    "id": 30,
+    "nome": "CEAB Escola de Comissário de Bordo e Aeromoça",
+    "anuncia_meta": "nao",
+    "meta_ads_count": 0,
+    "meta_metodo": "texto_pagina",
+    "anuncia_google": "sim",
+    "google_metodo": "cards_dominio"
+  },
+  {
+    "id": 31,
+    "nome": "Aeroclube de Uberlândia",
+    "anuncia_meta": "nao",
+    "meta_ads_count": 0,
+    "meta_metodo": "texto_pagina",
+    "anuncia_google": "nao",
+    "google_metodo": "texto_dominio"
+  },
+  {
+    "id": 32,
+    "nome": "Aeroclube do Rio Grande do Sul",
+    "anuncia_meta": "nao",
+    "meta_ads_count": 0,
+    "meta_metodo": "texto_pagina",
+    "anuncia_google": "nao",
+    "google_metodo": "texto_dominio"
+  },
+  {
+    "id": 33,
+    "nome": "Dumont Escola de Aviação",
+    "anuncia_meta": "nao",
+    "meta_ads_count": 0,
+    "meta_metodo": "texto_pagina",
+    "anuncia_google": "sim",
+    "google_metodo": "cards_dominio"
+  },
+  {
+    "id": 34,
+    "nome": "CIAC ESAER - Escola de Aviação Civil",
+    "anuncia_meta": "nao",
+    "meta_ads_count": 0,
+    "meta_metodo": "texto_pagina",
+    "anuncia_google": "sim",
+    "google_metodo": "cards_dominio"
+  },
+  {
+    "id": 35,
+    "nome": "Aeroclube de Pernambuco",
+    "anuncia_meta": "nao",
+    "meta_ads_count": 0,
+    "meta_metodo": "texto_pagina",
+    "anuncia_google": "nao",
+    "google_metodo": "texto_dominio"
+  },
+  {
+    "id": 36,
+    "nome": "Aeroclube de Eldorado do Sul",
+    "anuncia_meta": "nao",
+    "meta_ads_count": 0,
+    "meta_metodo": "texto_pagina",
+    "anuncia_google": "nao",
+    "google_metodo": "texto_dominio"
+  },
+  {
+    "id": 37,
+    "nome": "Aerosul Escola de Aviação Civil",
+    "anuncia_meta": "nao",
+    "meta_ads_count": 0,
+    "meta_metodo": "texto_pagina",
+    "anuncia_google": "sim",
+    "google_metodo": "cards_dominio"
+  },
+  {
+    "id": 38,
+    "nome": "FLY CENTER ESCOLA DE AVIAÇÃO - CAMPINAS",
+    "anuncia_meta": "nao",
+    "meta_ads_count": 0,
+    "meta_metodo": "texto_pagina",
+    "anuncia_google": "nao",
+    "google_metodo": "texto_dominio"
+  },
+  {
+    "id": 39,
+    "nome": "VOLARE Escola de Aviação Civil",
+    "anuncia_meta": "nao",
+    "meta_ads_count": 0,
+    "meta_metodo": "texto_pagina",
+    "anuncia_google": "nao",
+    "google_metodo": "texto_dominio"
+  },
+  {
+    "id": 40,
+    "nome": "Escola de Aviação Civil Pampulha",
+    "anuncia_meta": "sim",
+    "meta_ads_count": 1,
+    "meta_metodo": "contador_pagina",
+    "anuncia_google": "sim",
+    "google_metodo": "cards_dominio"
+  },
+  {
+    "id": 41,
+    "nome": "Curso de Ciências Aeronáuticas da PUCRS",
+    "anuncia_meta": "nao",
+    "meta_ads_count": 0,
+    "meta_metodo": "texto_pagina",
+    "anuncia_google": "sim",
+    "google_metodo": "cards_dominio"
+  },
+  {
+    "id": 42,
+    "nome": "Classic Escola de Aviação Civil",
+    "anuncia_meta": "nao",
+    "meta_ads_count": 0,
+    "meta_metodo": "texto_pagina",
+    "anuncia_google": "sim",
+    "google_metodo": "cards_dominio"
+  },
+  {
+    "id": 43,
+    "nome": "AeroAir - Produtos Aeronáuticos",
+    "anuncia_meta": "sim",
+    "meta_ads_count": 16,
+    "meta_metodo": "contador_pagina",
+    "anuncia_google": "nao",
+    "google_metodo": "texto_dominio"
+  },
+  {
+    "id": 44,
+    "nome": "PROAV - Escola de Aviação Civil",
+    "anuncia_meta": "sim",
+    "meta_ads_count": 9,
+    "meta_metodo": "contador_pagina",
+    "anuncia_google": "sim",
+    "google_metodo": "cards_dominio"
+  },
+  {
+    "id": 45,
+    "nome": "SAFE - Escola de Aviação (Base Campinas - SP)",
+    "anuncia_meta": "nao",
+    "meta_ads_count": 0,
+    "meta_metodo": "texto_pagina",
+    "anuncia_google": "sim",
+    "google_metodo": "cards_dominio"
+  },
+  {
+    "id": 46,
+    "nome": "Aeroclube São José do Rio Preto | Escola de Aviação",
+    "anuncia_meta": "nao",
+    "meta_ads_count": 0,
+    "meta_metodo": "texto_pagina",
+    "anuncia_google": "nao",
+    "google_metodo": "texto_dominio"
+  },
+  {
+    "id": 47,
+    "nome": "Aeroclube de Campinas",
+    "anuncia_meta": "nao",
+    "meta_ads_count": 0,
+    "meta_metodo": "texto_pagina",
+    "anuncia_google": "nao",
+    "google_metodo": "texto_dominio"
+  },
+  {
+    "id": 48,
+    "nome": "Faculdade AEROTD",
+    "anuncia_meta": "nao",
+    "meta_ads_count": 0,
+    "meta_metodo": "texto_pagina",
+    "anuncia_google": "sim",
+    "google_metodo": "cards_dominio"
+  },
+  {
+    "id": 49,
+    "nome": "Aeroclube do Amazonas",
+    "anuncia_meta": "nao",
+    "meta_ads_count": 0,
+    "meta_metodo": "texto_pagina",
+    "anuncia_google": "nao",
+    "google_metodo": "texto_dominio"
+  },
+  {
+    "id": 50,
+    "nome": "EJ Escola de Aeronáutica | Base Jundiaí",
+    "anuncia_meta": "sim",
+    "meta_ads_count": 7,
+    "meta_metodo": "contador_pagina",
+    "anuncia_google": "sim",
+    "google_metodo": "cards_dominio"
+  }
+]

@@ -1,16 +1,32 @@
 #!/usr/bin/env python3
 """
-Fase D: valida se os 50 numeros dos leads tem WhatsApp via Evolution API Contabo.
-Usa SSH pra nao expor API externamente.
+Fase D: valida se os 50 numeros dos leads tem WhatsApp via Evolution API (HTTP direto).
+Output: wa_validado.json
 """
-import csv, json, os, sys, io, subprocess, re
+import csv, json, os, sys, io, re, time
+import requests
+from pathlib import Path
+from dotenv import load_dotenv
 
 if sys.platform == "win32":
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 
-BASE = r"G:\Meu Drive\Claude\workspace\entregas\leads-certificadoras-bh-2026-04-22"
-CSV_IN = os.path.join(BASE, "leads_bh_merged.csv")
-OUT = os.path.join(BASE, "wa_validado.json")
+BASE = Path(__file__).parent
+CSV_IN = BASE / "leads_merged.csv"
+OUT    = BASE / "wa_validado.json"
+
+load_dotenv(BASE / ".env")
+
+EVOLUTION_API_URL = os.getenv("EVOLUTION_API_URL", "").rstrip("/").replace("/manager", "")
+EVOLUTION_API_KEY = os.getenv("EVOLUTION_API_KEY", "")
+EVOLUTION_INSTANCE = os.getenv("EVOLUTION_INSTANCE", "")
+
+if not EVOLUTION_API_URL or not EVOLUTION_API_KEY or not EVOLUTION_INSTANCE:
+    print("[ERRO] Variaveis EVOLUTION_API_URL, EVOLUTION_API_KEY, EVOLUTION_INSTANCE nao encontradas no .env")
+    sys.exit(1)
+
+print(f"Evolution API: {EVOLUTION_API_URL}")
+print(f"Instancia: {EVOLUTION_INSTANCE}")
 
 # Extrai numeros E.164 unicos dos 50 leads
 numeros = []
@@ -19,71 +35,122 @@ with open(CSV_IN, "r", encoding="utf-8-sig") as fh:
     for i, row in enumerate(csv.DictReader(fh), 1):
         if i > 50: break
         wa = re.sub(r"\D", "", row.get("whatsapp") or "")
+        if not wa:
+            wa = re.sub(r"\D", "", row.get("telefone") or "")
+            if wa and not wa.startswith("55"):
+                wa = "55" + wa
         if wa and wa not in seen:
             seen.add(wa)
             numeros.append({"id": i, "nome": row["nome"], "numero": wa})
+        elif not wa:
+            numeros.append({"id": i, "nome": row["nome"], "numero": None})
 
-print(f"Validando {len(numeros)} numeros via Evolution API (SSH Contabo)...")
+print(f"\nValidando {len([n for n in numeros if n['numero']])} numeros via Evolution API...")
 
-# Monta payload JSON (so os numeros)
-payload = {"numbers": [n["numero"] for n in numeros]}
-payload_json = json.dumps(payload)
+HEADERS = {
+    "apikey": EVOLUTION_API_KEY,
+    "Content-Type": "application/json",
+}
 
-# SSH + curl
-cmd = [
-    "ssh", "contabo",
-    f"curl -s -X POST 'http://localhost:8080/chat/whatsappNumbers/backup-whatsapp' "
-    f"-H 'apikey: whatsapp-backup-2026' "
-    f"-H 'Content-Type: application/json' "
-    f"-d '{payload_json}'"
-]
+instance_slug = EVOLUTION_INSTANCE.replace(" ", "%20")
 
-try:
-    r = subprocess.run(cmd, capture_output=True, text=True, timeout=60)
-    if r.returncode != 0:
-        print(f"ERRO SSH: {r.stderr}")
-        sys.exit(1)
-    resp = json.loads(r.stdout)
-except Exception as e:
-    print(f"ERRO: {e}")
-    print(f"STDOUT: {r.stdout[:500] if 'r' in dir() else 'N/A'}")
-    sys.exit(1)
+def check_whatsapp_batch(numbers: list) -> dict:
+    """Checa lista de numeros. Retorna dict {numero: {exists, jid, name}}."""
+    url = f"{EVOLUTION_API_URL}/chat/whatsappNumbers/{instance_slug}"
+    payload = {"numbers": numbers}
+    try:
+        r = requests.post(url, headers=HEADERS, json=payload, timeout=30)
+        if r.status_code == 200:
+            data = r.json()
+            if isinstance(data, list):
+                return {item.get("number", item.get("jid","").split("@")[0]): item for item in data}
+            elif isinstance(data, dict):
+                return data
+        else:
+            print(f"  [AVISO] HTTP {r.status_code}: {r.text[:200]}")
+    except Exception as e:
+        print(f"  [ERRO] {e}")
+    return {}
 
-# Map resposta por numero
-resp_by_num = {item["number"]: item for item in resp}
+# Processa em batches de 10
+BATCH = 10
+resultado = []
+nums_com_numero = [n for n in numeros if n["numero"]]
+nums_sem_numero = [n for n in numeros if not n["numero"]]
+
+resp_map = {}
+for i in range(0, len(nums_com_numero), BATCH):
+    batch = nums_com_numero[i:i+BATCH]
+    batch_nums = [n["numero"] for n in batch]
+    print(f"  Batch {i//BATCH + 1}: {batch_nums[:3]}...")
+    resp = check_whatsapp_batch(batch_nums)
+    resp_map.update(resp)
+    time.sleep(1)  # respeita rate limit
 
 # Cruza com leads
-resultado = []
 for n in numeros:
-    r = resp_by_num.get(n["numero"], {})
-    exists = r.get("exists", False)
+    if not n["numero"]:
+        resultado.append({
+            "id": n["id"],
+            "nome": n["nome"],
+            "numero": None,
+            "wa_ativo": False,
+            "wa_jid": None,
+            "wa_name": None,
+        })
+        continue
+
+    item = resp_map.get(n["numero"], {})
+    # Evolution API retorna "exists" ou campo booleano
+    exists = item.get("exists", False)
+    if not isinstance(exists, bool):
+        exists = bool(exists)
+    jid = item.get("jid") or item.get("wuid") or None
+    name = item.get("name") or item.get("pushName") or None
+
     resultado.append({
         "id": n["id"],
         "nome": n["nome"],
         "numero": n["numero"],
         "wa_ativo": exists,
-        "wa_jid": r.get("jid"),
-        "wa_name": r.get("name") or None,
+        "wa_jid": jid,
+        "wa_name": name,
     })
+
+# Garante que todos os 50 leads estão no resultado (mesmo sem numero)
+ids_presentes = {r["id"] for r in resultado}
+with open(CSV_IN, "r", encoding="utf-8-sig") as fh:
+    for i, row in enumerate(csv.DictReader(fh), 1):
+        if i > 50: break
+        if i not in ids_presentes:
+            resultado.append({
+                "id": i,
+                "nome": row["nome"],
+                "numero": None,
+                "wa_ativo": False,
+                "wa_jid": None,
+                "wa_name": None,
+            })
+
+resultado.sort(key=lambda x: x["id"])
 
 # Stats
 ativos = sum(1 for r in resultado if r["wa_ativo"])
 print(f"\n==========")
-print(f"WhatsApp ATIVO: {ativos}/{len(resultado)}")
+print(f"WhatsApp ATIVO:   {ativos}/{len(resultado)}")
 print(f"WhatsApp INATIVO: {len(resultado) - ativos}")
 
-# Lista os ATIVOS
 print("\nAtivos:")
 for r in resultado:
     if r["wa_ativo"]:
         name = f' | "{r["wa_name"]}"' if r["wa_name"] else ""
         print(f"  [OK] {r['nome'][:45]:45s} | {r['numero']}{name}")
 
-# Lista os INATIVOS
-print("\nInativos (sem WA):")
+print("\nInativos:")
 for r in resultado:
     if not r["wa_ativo"]:
-        print(f"  [--] {r['nome'][:45]:45s} | {r['numero']}")
+        num = r["numero"] or "sem numero"
+        print(f"  [--] {r['nome'][:45]:45s} | {num}")
 
 with open(OUT, "w", encoding="utf-8") as fh:
     json.dump(resultado, fh, ensure_ascii=False, indent=2)

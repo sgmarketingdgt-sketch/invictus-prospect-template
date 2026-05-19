@@ -34,7 +34,7 @@ import re
 import sys
 import time
 import unicodedata
-from datetime import datetime, timezone
+from datetime import datetime
 from pathlib import Path
 
 try:
@@ -67,9 +67,14 @@ CAMPOS_VOLATEIS = {
     "site",
     "telefone",
     "endereco_completo",
+    "mensagem_wa",
+    # Ângulo de abordagem — gerado pelo Python pipeline, atualizado a cada rodada
+    "angulo",
+    "conteudo_angulo",
+    "resultado_alvo",
 }
 
-# Campos que NUNCA são tocados em re-execuções (trabalho do operador)
+# Campos que NUNCA são tocados em re-execuções (trabalho do operador / N8N)
 CAMPOS_PROTEGIDOS = {
     "status",
     "notes",
@@ -77,6 +82,7 @@ CAMPOS_PROTEGIDOS = {
     "rapport_humano",
     "gancho_dor",
     "first_seen_at",
+    "historico_resumido",  # gravado pelo N8N, Python nunca sobrescreve
 }
 
 
@@ -219,8 +225,6 @@ def montar_payload_insert(lead: dict, agencia: str, segmento: str, cidade: str |
         "dono": lead.get("dono"),
         "dono_fonte": lead.get("dono_fonte"),
         "maps_nota": lead.get("maps_nota"),
-        "maps_avaliacoes": lead.get("maps_avaliacoes"),
-        "maps_fotos": lead.get("maps_fotos"),
         "maps_recencia_dias": lead.get("maps_recencia_dias"),
         "maps_nrl": lead.get("maps_nrl"),
         "nicho_cliente": lead.get("nicho_cliente"),
@@ -232,19 +236,23 @@ def montar_payload_insert(lead: dict, agencia: str, segmento: str, cidade: str |
         "meta_ads_count": int(lead.get("meta_ads_count") or 0),
         "rapport_humano": lead.get("rapport_humano") or [],
         "gancho_dor": lead.get("gancho_dor") or [],
+        "mensagem_wa": lead.get("mensagem_wa"),
+        "angulo": lead.get("angulo"),
+        "conteudo_angulo": lead.get("conteudo_angulo"),
+        "resultado_alvo": lead.get("resultado_alvo"),
         "priority_score": float(lead.get("priority_score") or 0),
         "status": "novo",
         "notes": [],
         "activity": [],
         "novo_nesta_rodada": True,
-        "first_seen_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
-        "last_seen_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
+        "first_seen_at": datetime.utcnow().isoformat() + "Z",
+        "last_seen_at": datetime.utcnow().isoformat() + "Z",
     }
 
 
 def montar_payload_update(lead: dict) -> dict:
     """Atualização diferencial: somente campos voláteis + last_seen_at."""
-    payload = {"last_seen_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.%fZ")}
+    payload = {"last_seen_at": datetime.utcnow().isoformat() + "Z"}
     for campo in CAMPOS_VOLATEIS:
         if campo in lead and lead[campo] is not None:
             payload[campo] = lead[campo]
@@ -296,7 +304,7 @@ def registrar_execucao(cfg: dict, extraidos: int, novos: int, existentes: int, d
         "leads_novos": novos,
         "leads_existentes": existentes,
         "duracao_segundos": int(duracao),
-        "data_execucao": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
+        "data_execucao": datetime.utcnow().isoformat() + "Z",
     }
     url = f"{cfg['url']}/rest/v1/execucoes"
     resp = requests.post(url, headers=headers_supabase(cfg["key"]), json=payload, timeout=30)
@@ -377,23 +385,21 @@ def main() -> int:
             duracao=time.time() - inicio,
         )
 
-    if args.dry_run:
-        print("[dry-run] leads_final.json NAO foi modificado")
-    else:
-        out_path = args.input
-        payload_out = {
-            "leads": leads_locais,
-            "sync": {
-                "agencia": cfg["agencia"],
-                "segmento": cfg["segmento"],
-                "novos": len(novos),
-                "existentes_preservados": len(para_atualizar),
-                "executado_em": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
-            },
-        }
-        with out_path.open("w", encoding="utf-8") as fh:
-            json.dump(payload_out, fh, ensure_ascii=False, indent=2)
-        print(f"[ok] {out_path.name} atualizado com flags novo_nesta_rodada")
+    out_path = args.input
+    payload_out = {
+        "leads": leads_locais,
+        "sync": {
+            "agencia": cfg["agencia"],
+            "segmento": cfg["segmento"],
+            "novos": len(novos),
+            "existentes_preservados": len(para_atualizar),
+            "executado_em": datetime.utcnow().isoformat() + "Z",
+            "dry_run": args.dry_run,
+        },
+    }
+    with out_path.open("w", encoding="utf-8") as fh:
+        json.dump(payload_out, fh, ensure_ascii=False, indent=2)
+    print(f"[ok] {out_path.name} atualizado com flags novo_nesta_rodada")
 
     print()
     print(f"[fim] {time.time() - inicio:.1f}s")

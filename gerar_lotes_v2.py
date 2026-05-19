@@ -8,12 +8,13 @@ import csv, json, os, sys, io
 if sys.platform == "win32":
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 
-BASE = r"G:\Meu Drive\Claude\workspace\entregas\leads-certificadoras-bh-2026-04-22"
-CSV_IN = os.path.join(BASE, "leads_bh_merged.csv")
-CNPJ_JSON = os.path.join(BASE, "cnpj_enriquecidos.json")
-ENRICHED_V1_DIR = os.path.join(BASE, "lotes")
-OUT_DIR = os.path.join(BASE, "lotes_v2")
-os.makedirs(OUT_DIR, exist_ok=True)
+from pathlib import Path
+BASE = Path(__file__).parent
+CSV_IN = BASE / "leads_merged.csv"
+CNPJ_JSON = BASE / "cnpj_enriquecidos.json"
+ENRICHED_V1_DIR = BASE / "lotes"
+OUT_DIR = BASE / "lotes_v2"
+OUT_DIR.mkdir(exist_ok=True)
 
 # Base
 leads = []

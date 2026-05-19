@@ -1,0 +1,702 @@
+[
+  {
+    "id": 4,
+    "nome": "HAMBURGUERIA ZONA NORTE | SP | Best X-Burguer",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 5,
+    "nome": "Vanessa's Burgers - Hamburgueria em Vila Albertina",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 11,
+    "nome": "Triunfo burguer",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 12,
+    "nome": "Bonnie e Cleyde hamburgueria artesanal",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 15,
+    "nome": "Mario Lanches",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 21,
+    "nome": "HOPPS BURGER ARTESANAL",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 26,
+    "nome": "Kiwi burger artesanal",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 29,
+    "nome": "Smash Burguer das Loiras",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 17,
+    "nome": "Time Burger",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 8,
+    "nome": "Guga Burger",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 18,
+    "nome": "Jaragua Smash Burguer",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 20,
+    "nome": "ManuArt Burguer",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 22,
+    "nome": "Ray Burguer - Hamburgueria em Bela vista",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 28,
+    "nome": "Deu Fome Food - Burgers e Pastéis",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 47,
+    "nome": "Anjos Noturnos Hambúrgueria Artesanal",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 48,
+    "nome": "Bull Garage",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 49,
+    "nome": "Yellow Black Burger",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 50,
+    "nome": "ARTESANAL BURGER PERUS",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 142,
+    "nome": "Classic Escola de Aviação Civil",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 19,
+    "nome": "R2 Lanches Artesanais",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 102,
+    "nome": "Flight Class",
+    "email": "casagrande.rad@gmail.com",
+    "email_fonte": "registrobr_rdap",
+    "whois_nome": "Eduardo Rad"
+  },
+  {
+    "id": 103,
+    "nome": "VelAir Escola de Aviação Civil",
+    "email": "estevan2004@hotmail.com",
+    "email_fonte": "registrobr_rdap",
+    "whois_nome": "Estevan Lopez Velasquez"
+  },
+  {
+    "id": 104,
+    "nome": "Grandis Soluções - Consultoria Aeronáutica e Cursos para Pilotos e Comissários de voo",
+    "email": "grandissolucoes@gmail.com",
+    "email_fonte": "registrobr_rdap",
+    "whois_nome": "ANDRÉ LUÍS FERREIRA GRANDIS"
+  },
+  {
+    "id": 105,
+    "nome": "Sky Escola de Aeronáutica",
+    "email": "marketing@voesky.com.br",
+    "email_fonte": "registrobr_rdap",
+    "whois_nome": "Sky Escola de Aeronáutica Ltda"
+  },
+  {
+    "id": 106,
+    "nome": "Aerocurso - Escola de Aviação Civil | CIAC 22",
+    "email": "atendimento@isoftsolutions.com.br",
+    "email_fonte": "site_scraping",
+    "whois_nome": null
+  },
+  {
+    "id": 108,
+    "nome": "Aero Agrícola Santos Dumont",
+    "email": "aerosantosdumont@gmail.com",
+    "email_fonte": "registrobr_rdap",
+    "whois_nome": "Aero Agrícola Santos Dumont Ltda."
+  },
+  {
+    "id": 109,
+    "nome": "DH Escola de Aviação Civil",
+    "email": "danielslcosta@gmail.com",
+    "email_fonte": "registrobr_rdap",
+    "whois_nome": "Daniel Saraiva de Lacerda Costa"
+  },
+  {
+    "id": 111,
+    "nome": "Bravo Escola de Aviação Civil",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 114,
+    "nome": "Vertical Escola de Aviação Civil Ltda.",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 115,
+    "nome": "Sky Eagles",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 123,
+    "nome": "Aeroclube de Londrina",
+    "email": "aeroclube@aeroclubedelondrina.com.br",
+    "email_fonte": "registrobr_rdap",
+    "whois_nome": "Aeroclube de Londrina Escola de Aviação Civil"
+  },
+  {
+    "id": 124,
+    "nome": "Sierra Bravo Escola de Aviação",
+    "email": "andreia@sierrabravo.com.br",
+    "email_fonte": "registrobr_rdap",
+    "whois_nome": "THIAGO BERALDO"
+  },
+  {
+    "id": 125,
+    "nome": "Escola Aero - Por Trás da Aviação",
+    "email": "gisella@singularfilmes.com.br",
+    "email_fonte": "registrobr_rdap",
+    "whois_nome": "Gisella Depiné Poffo"
+  },
+  {
+    "id": 127,
+    "nome": "Academia de Pilotos",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 2,
+    "nome": "Hamburg Hamburgueria Artesanal",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 39,
+    "nome": "Redart Burger | Hamburgueria",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 43,
+    "nome": "Charles Smash Burger",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 129,
+    "nome": "Aeroclube do Paraná",
+    "email": "registros@vegait.com.br",
+    "email_fonte": "registrobr_rdap",
+    "whois_nome": "AERO CLUBE DO PARANA"
+  },
+  {
+    "id": 130,
+    "nome": "CEAB Escola de Comissário de Bordo e Aeromoça",
+    "email": "ceab@ceabbrasil.com.br",
+    "email_fonte": "registrobr_rdap",
+    "whois_nome": "Ceab - Centro Educacional da Aviação do Brasil"
+  },
+  {
+    "id": 133,
+    "nome": "Dumont Escola de Aviação",
+    "email": "lcsbacg@globo.com",
+    "email_fonte": "registrobr_rdap",
+    "whois_nome": "LUIZ CARLOS SILVA"
+  },
+  {
+    "id": 134,
+    "nome": "CIAC ESAER - Escola de Aviação Civil",
+    "email": "esaer@esaer.com.br",
+    "email_fonte": "registrobr_rdap",
+    "whois_nome": "Sonar Sociedade Nacional de Aeronáutica sc. Ltda."
+  },
+  {
+    "id": 135,
+    "nome": "Aeroclube de Pernambuco",
+    "email": "seoanalyticsview@gmail.com",
+    "email_fonte": "registrobr_rdap",
+    "whois_nome": "RODNEY ANTUNES"
+  },
+  {
+    "id": 139,
+    "nome": "VOLARE Escola de Aviação Civil",
+    "email": "voevolare@hotmail.com",
+    "email_fonte": "registrobr_rdap",
+    "whois_nome": "VOLARE ESCOLA DE AVIAO CIVIL LTDA"
+  },
+  {
+    "id": 143,
+    "nome": "AeroAir - Produtos Aeronáuticos",
+    "email": "yagobernardi@aol.com",
+    "email_fonte": "registrobr_rdap",
+    "whois_nome": "AeroAir - Produtos Aeronáuticos"
+  },
+  {
+    "id": 144,
+    "nome": "PROAV - Escola de Aviação Civil",
+    "email": "rafaeltieghi@gmail.com",
+    "email_fonte": "registrobr_rdap",
+    "whois_nome": "Rafael Benfica Tieghi"
+  },
+  {
+    "id": 149,
+    "nome": "Aeroclube do Amazonas",
+    "email": "aeroclube.am@gmail.com",
+    "email_fonte": "site_scraping",
+    "whois_nome": null
+  },
+  {
+    "id": 3,
+    "nome": "Império Hamburgueria",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 6,
+    "nome": "Lio's Burguer",
+    "email": "fellipe.valerio@gmail.com",
+    "email_fonte": "registrobr_rdap",
+    "whois_nome": "FELLIPE PIRES VALÉRIO"
+  },
+  {
+    "id": 7,
+    "nome": "Hamburgueria Porco Velho",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 9,
+    "nome": "Asa Burguer",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 10,
+    "nome": "Scrafani Burger",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 14,
+    "nome": "Box Burguer ZN",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 24,
+    "nome": "Hamburgueria zona norte - Mister Burger",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 25,
+    "nome": "J.A Gourmet",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 27,
+    "nome": "RAFFA BURGUER GOURMET",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 35,
+    "nome": "SMASHED BURGUER",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 116,
+    "nome": "Voe Mais Escola de Aeronáutica",
+    "email": "voemaisaeronautica@gmail.com",
+    "email_fonte": "registrobr_rdap",
+    "whois_nome": "VOE MAIS AERONÁUTICA"
+  },
+  {
+    "id": 145,
+    "nome": "SAFE - Escola de Aviação (Base Campinas - SP)",
+    "email": "jose.ramos@voesafe.com.br",
+    "email_fonte": "registrobr_rdap",
+    "whois_nome": "safe escola de aviação civil ltda"
+  },
+  {
+    "id": 146,
+    "nome": "Aeroclube São José do Rio Preto | Escola de Aviação",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 13,
+    "nome": "Ciao Burger",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 1,
+    "nome": "Hamburgueria Seu Perfil Gourmet",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 32,
+    "nome": "Hamburgueria Click Burger – Delivery",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 33,
+    "nome": "Hamburgueria Big Sobral",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 37,
+    "nome": "HB BURGER - Hamburgueria Artesanal no Jardim Marajoara sob nova direção",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 42,
+    "nome": "Giones Bacon - Hamburgueria na Lapa - SP | Burgers na Brasa",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 44,
+    "nome": "Fraps Burger",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 46,
+    "nome": "Haven Burger Hamburgueria",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 23,
+    "nome": "Maximus House Burger",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 118,
+    "nome": "Starflight Escola de Aviação Civil",
+    "email": "escola@starflightnet.com.br",
+    "email_fonte": "registrobr_rdap",
+    "whois_nome": "Starflight Academia de Aviação Ltda"
+  },
+  {
+    "id": 120,
+    "nome": "Escola para Piloto de Avião",
+    "email": "rgddomingues75@gmail.com",
+    "email_fonte": "registrobr_rdap",
+    "whois_nome": "Ricardo Gonçalves Dias Domingues"
+  },
+  {
+    "id": 126,
+    "nome": "BSB Aviation Escola de Aviação Civil Ltda.",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 16,
+    "nome": "Chapa Quente Tradicional Burger",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 34,
+    "nome": "Na Brasa Burger - Hamburgueria Artesanal",
+    "email": "ktbelo@hotmail.com",
+    "email_fonte": "registrobr_rdap",
+    "whois_nome": "Kaique Tavares Belo"
+  },
+  {
+    "id": 101,
+    "nome": "ATC - Faculdade de Aviação Civil",
+    "email": "navarro@institutonavarrolucio.com.br",
+    "email_fonte": "registrobr_rdap",
+    "whois_nome": "Leonardo Canalli"
+  },
+  {
+    "id": 107,
+    "nome": "EPEAC Aviação",
+    "email": "leandro@eadaviacao.com.br",
+    "email_fonte": "registrobr_rdap",
+    "whois_nome": "Leandro Carvalho"
+  },
+  {
+    "id": 110,
+    "nome": "Go Air Escola de Aviação Civil",
+    "email": "contato@aoun.com.br",
+    "email_fonte": "registrobr_rdap",
+    "whois_nome": "Tatiana de Campos Siaulys"
+  },
+  {
+    "id": 121,
+    "nome": "Auto Escola Piloto - Torre",
+    "email": "sac@grupolg.net",
+    "email_fonte": "registrobr_rdap",
+    "whois_nome": "FABIO LITES DE GUSMAO COSTA"
+  },
+  {
+    "id": 122,
+    "nome": "Aero São José dos Campos | Escola de Aviação | Ciac | Aeroclube | Comissário de Voo | Mecânico | Piloto avião Helicóptero",
+    "email": "jvitoranciaes@gmail.com",
+    "email_fonte": "registrobr_rdap",
+    "whois_nome": "AERO SaO JOSe DOS CAMPOS"
+  },
+  {
+    "id": 128,
+    "nome": "Aeroclube de Voo A Vela CTA - CVV-CTA",
+    "email": "eduardo.torrecillas@gmail.com",
+    "email_fonte": "registrobr_rdap",
+    "whois_nome": "Aeroclube de Vôo à Vela - CTA"
+  },
+  {
+    "id": 131,
+    "nome": "Aeroclube de Uberlândia",
+    "email": "aeroclubeudi@netsite.com.br",
+    "email_fonte": "registrobr_rdap",
+    "whois_nome": "Aeroclube de uberlandia"
+  },
+  {
+    "id": 132,
+    "nome": "Aeroclube do Rio Grande do Sul",
+    "email": "vinicius@berni.com.br",
+    "email_fonte": "registrobr_rdap",
+    "whois_nome": "AEROCLUBE DO RIO GRANDE DO SUL"
+  },
+  {
+    "id": 136,
+    "nome": "Aeroclube de Eldorado do Sul",
+    "email": "strieder.setrem@gmail.com",
+    "email_fonte": "registrobr_rdap",
+    "whois_nome": "Aeroclube de Eldorado do Sul"
+  },
+  {
+    "id": 137,
+    "nome": "Aerosul Escola de Aviação Civil",
+    "email": "financeiro@voeaerosul.com.br",
+    "email_fonte": "registrobr_rdap",
+    "whois_nome": "Aerosul Centro de Form. de Comis. de Voo e Asses."
+  },
+  {
+    "id": 138,
+    "nome": "FLY CENTER ESCOLA DE AVIAÇÃO - CAMPINAS",
+    "email": "secretaria@flycenterweb.com.br",
+    "email_fonte": "site_scraping",
+    "whois_nome": null
+  },
+  {
+    "id": 140,
+    "nome": "Escola de Aviação Civil Pampulha",
+    "email": "contato.eacpampulha@gmail.com",
+    "email_fonte": "site_scraping",
+    "whois_nome": null
+  },
+  {
+    "id": 141,
+    "nome": "Curso de Ciências Aeronáuticas da PUCRS",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 147,
+    "nome": "Aeroclube de Campinas",
+    "email": "financeiro@aeroclubedecampinas.com.br",
+    "email_fonte": "registrobr_rdap",
+    "whois_nome": "Aeroclube de Campinas"
+  },
+  {
+    "id": 148,
+    "nome": "Faculdade AEROTD",
+    "email": "aerotd@aerotd.edu.br",
+    "email_fonte": "site_scraping",
+    "whois_nome": null
+  },
+  {
+    "id": 150,
+    "nome": "EJ Escola de Aeronáutica | Base Jundiaí",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 112,
+    "nome": "BrasFlight Escola Brasileira de Aviação Ltda",
+    "email": "cjmduarte@gmail.com",
+    "email_fonte": "registrobr_rdap",
+    "whois_nome": "BRAS FLIGHT - ESCOLA BRASILEIRA DE AVIAÇÃO CIVIL L"
+  },
+  {
+    "id": 113,
+    "nome": "Airtraining Escola de Aviação Civil",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 30,
+    "nome": "Gigant's Burger",
+    "email": "eu@daniellombardi.com.br",
+    "email_fonte": "registrobr_rdap",
+    "whois_nome": "Rafael de Sousa Nascimento"
+  },
+  {
+    "id": 31,
+    "nome": "Senhora Burguer",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 38,
+    "nome": "Três Bruxos Burger",
+    "email": "lucas.bricker@hotmail.com",
+    "email_fonte": "registrobr_rdap",
+    "whois_nome": "Tres Bruxos Comercio de Alimentos"
+  },
+  {
+    "id": 40,
+    "nome": "New Blend Burger & BBQ | Hamburgueria Artesanal | Vila Carmela | Guarulhos",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 41,
+    "nome": "Australian Burger || hambúrguer e lanches",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 45,
+    "nome": "Artes Burger",
+    "email": "claudiamedeiros07@gmail.com",
+    "email_fonte": "registrobr_rdap",
+    "whois_nome": "Claudia da Silva Medeiros"
+  },
+  {
+    "id": 36,
+    "nome": "Santa Caldeira Beer e Burger",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  },
+  {
+    "id": 117,
+    "nome": "Ícaro Aviação",
+    "email": "icaroaviacao@gmail.com",
+    "email_fonte": "registrobr_rdap",
+    "whois_nome": "Jeisson Gomes Pequeno"
+  },
+  {
+    "id": 119,
+    "nome": "Escola Piloto de Engenharia Química",
+    "email": null,
+    "email_fonte": null,
+    "whois_nome": null
+  }
+]

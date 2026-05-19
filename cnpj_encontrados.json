@@ -1,0 +1,865 @@
+[
+  {
+    "id": 1,
+    "nome": "ATC - Faculdade de Aviação Civil",
+    "site": "https://atcaviacao.com.br/",
+    "cnpj": "23.903.893/0001-80",
+    "metodo": "requests",
+    "pagina_origem": "https://atcaviacao.com.br",
+    "paginas_tentadas": [
+      "https://atcaviacao.com.br"
+    ]
+  },
+  {
+    "id": 2,
+    "nome": "Flight Class",
+    "site": "https://curso.flightclass.com.br/",
+    "cnpj": "25.109.690/0001-42",
+    "metodo": "econodata",
+    "pagina_origem": "https://www.econodata.com.br/empresas/SP--SAO-PAULO/flight",
+    "paginas_tentadas": [
+      "https://curso.flightclass.com.br",
+      "https://curso.flightclass.com.br/contato",
+      "https://curso.flightclass.com.br/sobre",
+      "https://curso.flightclass.com.br/sobre-nos",
+      "https://curso.flightclass.com.br/quem-somos",
+      "https://curso.flightclass.com.br/politica-de-privacidade",
+      "https://curso.flightclass.com.br/politica-privacidade",
+      "https://curso.flightclass.com.br/termos",
+      "https://curso.flightclass.com.br/termos-de-uso",
+      "https://curso.flightclass.com.br/empresa",
+      "https://curso.flightclass.com.br/info"
+    ]
+  },
+  {
+    "id": 3,
+    "nome": "VelAir Escola de Aviação Civil",
+    "site": "http://www.velair.com.br/",
+    "cnpj": null,
+    "paginas_tentadas": [
+      "http://www.velair.com.br",
+      "http://www.velair.com.br/contato",
+      "http://www.velair.com.br/sobre",
+      "http://www.velair.com.br/sobre-nos",
+      "http://www.velair.com.br/quem-somos",
+      "http://www.velair.com.br/politica-de-privacidade",
+      "http://www.velair.com.br/politica-privacidade",
+      "http://www.velair.com.br/termos",
+      "http://www.velair.com.br/termos-de-uso",
+      "http://www.velair.com.br/empresa",
+      "http://www.velair.com.br/info"
+    ]
+  },
+  {
+    "id": 4,
+    "nome": "Grandis Soluções - Consultoria Aeronáutica e Cursos para Pilotos e Comissários de voo",
+    "site": "http://www.grandissolucoes.com.br/",
+    "cnpj": "63.260.078/0001-65",
+    "metodo": "requests",
+    "pagina_origem": "http://www.grandissolucoes.com.br",
+    "paginas_tentadas": [
+      "http://www.grandissolucoes.com.br"
+    ]
+  },
+  {
+    "id": 5,
+    "nome": "Sky Escola de Aeronáutica",
+    "site": "https://skyescoladeaviacao.com.br/",
+    "cnpj": "49.336.860/0001-90",
+    "metodo": "econodata",
+    "pagina_origem": "https://www.econodata.com.br/empresas/SP--SAO-PAULO/sky",
+    "paginas_tentadas": [
+      "https://skyescoladeaviacao.com.br",
+      "https://skyescoladeaviacao.com.br/contato",
+      "https://skyescoladeaviacao.com.br/sobre",
+      "https://skyescoladeaviacao.com.br/sobre-nos",
+      "https://skyescoladeaviacao.com.br/quem-somos",
+      "https://skyescoladeaviacao.com.br/politica-de-privacidade",
+      "https://skyescoladeaviacao.com.br/politica-privacidade",
+      "https://skyescoladeaviacao.com.br/termos",
+      "https://skyescoladeaviacao.com.br/termos-de-uso",
+      "https://skyescoladeaviacao.com.br/empresa",
+      "https://skyescoladeaviacao.com.br/info"
+    ]
+  },
+  {
+    "id": 6,
+    "nome": "Aerocurso - Escola de Aviação Civil | CIAC 22",
+    "site": "https://www.aerocurso.com/",
+    "cnpj": null,
+    "paginas_tentadas": [
+      "https://www.aerocurso.com",
+      "https://www.aerocurso.com/contato",
+      "https://www.aerocurso.com/sobre",
+      "https://www.aerocurso.com/sobre-nos",
+      "https://www.aerocurso.com/quem-somos",
+      "https://www.aerocurso.com/politica-de-privacidade",
+      "https://www.aerocurso.com/politica-privacidade",
+      "https://www.aerocurso.com/termos",
+      "https://www.aerocurso.com/termos-de-uso",
+      "https://www.aerocurso.com/empresa",
+      "https://www.aerocurso.com/info"
+    ]
+  },
+  {
+    "id": 7,
+    "nome": "EPEAC Aviação",
+    "site": "https://epeac.com.br/",
+    "cnpj": "38.614.906/0001-79",
+    "metodo": "requests",
+    "pagina_origem": "https://epeac.com.br",
+    "paginas_tentadas": [
+      "https://epeac.com.br"
+    ]
+  },
+  {
+    "id": 8,
+    "nome": "Aero Agrícola Santos Dumont",
+    "site": "https://www.aviacaoagricola.com.br/",
+    "cnpj": "88.418.116/0001-96",
+    "metodo": "requests",
+    "pagina_origem": "https://www.aviacaoagricola.com.br",
+    "paginas_tentadas": [
+      "https://www.aviacaoagricola.com.br"
+    ]
+  },
+  {
+    "id": 9,
+    "nome": "DH Escola de Aviação Civil",
+    "site": "http://www.voedh.com.br/",
+    "cnpj": "07.594.978/0001-78",
+    "metodo": "econodata",
+    "pagina_origem": "https://www.econodata.com.br/empresas/SP--SAO-PAULO/escola",
+    "paginas_tentadas": [
+      "http://www.voedh.com.br",
+      "http://www.voedh.com.br/contato",
+      "http://www.voedh.com.br/sobre",
+      "http://www.voedh.com.br/sobre-nos",
+      "http://www.voedh.com.br/quem-somos",
+      "http://www.voedh.com.br/politica-de-privacidade",
+      "http://www.voedh.com.br/politica-privacidade",
+      "http://www.voedh.com.br/termos",
+      "http://www.voedh.com.br/termos-de-uso",
+      "http://www.voedh.com.br/empresa",
+      "http://www.voedh.com.br/info"
+    ]
+  },
+  {
+    "id": 10,
+    "nome": "Go Air Escola de Aviação Civil",
+    "site": "http://www.goair.com.br/",
+    "cnpj": "02.012.862/0001-60",
+    "metodo": "econodata",
+    "pagina_origem": "https://www.econodata.com.br/empresas/SP--SAO-PAULO/air",
+    "paginas_tentadas": [
+      "http://www.goair.com.br",
+      "http://www.goair.com.br/contato",
+      "http://www.goair.com.br/sobre",
+      "http://www.goair.com.br/sobre-nos",
+      "http://www.goair.com.br/quem-somos",
+      "http://www.goair.com.br/politica-de-privacidade",
+      "http://www.goair.com.br/politica-privacidade",
+      "http://www.goair.com.br/termos",
+      "http://www.goair.com.br/termos-de-uso",
+      "http://www.goair.com.br/empresa",
+      "http://www.goair.com.br/info"
+    ]
+  },
+  {
+    "id": 11,
+    "nome": "Bravo Escola de Aviação Civil",
+    "site": "",
+    "cnpj": "48.946.930/0001-69",
+    "metodo": "econodata",
+    "pagina_origem": "https://www.econodata.com.br/empresas/SP--SAO-PAULO/bravo",
+    "paginas_tentadas": []
+  },
+  {
+    "id": 12,
+    "nome": "BrasFlight Escola Brasileira de Aviação Ltda",
+    "site": "http://www.brasflight.com.br/",
+    "cnpj": null,
+    "paginas_tentadas": [
+      "http://www.brasflight.com.br",
+      "http://www.brasflight.com.br/contato",
+      "http://www.brasflight.com.br/sobre",
+      "http://www.brasflight.com.br/sobre-nos",
+      "http://www.brasflight.com.br/quem-somos",
+      "http://www.brasflight.com.br/politica-de-privacidade",
+      "http://www.brasflight.com.br/politica-privacidade",
+      "http://www.brasflight.com.br/termos",
+      "http://www.brasflight.com.br/termos-de-uso",
+      "http://www.brasflight.com.br/empresa",
+      "http://www.brasflight.com.br/info"
+    ]
+  },
+  {
+    "id": 13,
+    "nome": "Airtraining Escola de Aviação Civil",
+    "site": "http://www.airtraining.com.br/",
+    "cnpj": null,
+    "paginas_tentadas": [
+      "http://www.airtraining.com.br",
+      "http://www.airtraining.com.br/contato",
+      "http://www.airtraining.com.br/sobre",
+      "http://www.airtraining.com.br/sobre-nos",
+      "http://www.airtraining.com.br/quem-somos",
+      "http://www.airtraining.com.br/politica-de-privacidade",
+      "http://www.airtraining.com.br/politica-privacidade",
+      "http://www.airtraining.com.br/termos",
+      "http://www.airtraining.com.br/termos-de-uso",
+      "http://www.airtraining.com.br/empresa",
+      "http://www.airtraining.com.br/info"
+    ]
+  },
+  {
+    "id": 14,
+    "nome": "Vertical Escola de Aviação Civil Ltda.",
+    "site": "",
+    "cnpj": "57.783.743/0001-00",
+    "metodo": "econodata",
+    "pagina_origem": "https://www.econodata.com.br/empresas/SP--SAO-PAULO/vertical",
+    "paginas_tentadas": []
+  },
+  {
+    "id": 15,
+    "nome": "Sky Eagles",
+    "site": "",
+    "cnpj": "49.336.860/0001-90",
+    "metodo": "econodata",
+    "pagina_origem": "https://www.econodata.com.br/empresas/SP--SAO-PAULO/sky",
+    "paginas_tentadas": []
+  },
+  {
+    "id": 16,
+    "nome": "Voe Mais Escola de Aeronáutica",
+    "site": "https://voemaisaeronautica.com.br/",
+    "cnpj": "02.415.408/0001-50",
+    "metodo": "econodata",
+    "pagina_origem": "https://www.econodata.com.br/empresas/SP--SAO-PAULO/voe",
+    "paginas_tentadas": [
+      "https://voemaisaeronautica.com.br",
+      "https://voemaisaeronautica.com.br/contato",
+      "https://voemaisaeronautica.com.br/sobre",
+      "https://voemaisaeronautica.com.br/sobre-nos",
+      "https://voemaisaeronautica.com.br/quem-somos",
+      "https://voemaisaeronautica.com.br/politica-de-privacidade",
+      "https://voemaisaeronautica.com.br/politica-privacidade",
+      "https://voemaisaeronautica.com.br/termos",
+      "https://voemaisaeronautica.com.br/termos-de-uso",
+      "https://voemaisaeronautica.com.br/empresa",
+      "https://voemaisaeronautica.com.br/info"
+    ]
+  },
+  {
+    "id": 17,
+    "nome": "Ícaro Aviação",
+    "site": "http://www.sejapiloto.com.br/",
+    "cnpj": "04.860.349/0001-54",
+    "metodo": "econodata",
+    "pagina_origem": "https://www.econodata.com.br/empresas/SP--SAO-PAULO/icaro",
+    "paginas_tentadas": [
+      "http://www.sejapiloto.com.br",
+      "http://www.sejapiloto.com.br/contato",
+      "http://www.sejapiloto.com.br/sobre",
+      "http://www.sejapiloto.com.br/sobre-nos",
+      "http://www.sejapiloto.com.br/quem-somos",
+      "http://www.sejapiloto.com.br/politica-de-privacidade",
+      "http://www.sejapiloto.com.br/politica-privacidade",
+      "http://www.sejapiloto.com.br/termos",
+      "http://www.sejapiloto.com.br/termos-de-uso",
+      "http://www.sejapiloto.com.br/empresa",
+      "http://www.sejapiloto.com.br/info"
+    ]
+  },
+  {
+    "id": 18,
+    "nome": "Starflight Escola de Aviação Civil",
+    "site": "http://www.starflightnet.com.br/",
+    "cnpj": null,
+    "paginas_tentadas": [
+      "http://www.starflightnet.com.br",
+      "http://www.starflightnet.com.br/contato",
+      "http://www.starflightnet.com.br/sobre",
+      "http://www.starflightnet.com.br/sobre-nos",
+      "http://www.starflightnet.com.br/quem-somos",
+      "http://www.starflightnet.com.br/politica-de-privacidade",
+      "http://www.starflightnet.com.br/politica-privacidade",
+      "http://www.starflightnet.com.br/termos",
+      "http://www.starflightnet.com.br/termos-de-uso",
+      "http://www.starflightnet.com.br/empresa",
+      "http://www.starflightnet.com.br/info"
+    ]
+  },
+  {
+    "id": 19,
+    "nome": "Escola Piloto de Engenharia Química",
+    "site": "http://epequfpr.blogspot.com.br/",
+    "cnpj": "07.594.978/0001-78",
+    "metodo": "econodata",
+    "pagina_origem": "https://www.econodata.com.br/empresas/SP--SAO-PAULO/escola",
+    "paginas_tentadas": [
+      "http://epequfpr.blogspot.com.br",
+      "http://epequfpr.blogspot.com.br/contato",
+      "http://epequfpr.blogspot.com.br/sobre",
+      "http://epequfpr.blogspot.com.br/sobre-nos",
+      "http://epequfpr.blogspot.com.br/quem-somos",
+      "http://epequfpr.blogspot.com.br/politica-de-privacidade",
+      "http://epequfpr.blogspot.com.br/politica-privacidade",
+      "http://epequfpr.blogspot.com.br/termos",
+      "http://epequfpr.blogspot.com.br/termos-de-uso",
+      "http://epequfpr.blogspot.com.br/empresa",
+      "http://epequfpr.blogspot.com.br/info"
+    ]
+  },
+  {
+    "id": 20,
+    "nome": "Escola para Piloto de Avião",
+    "site": "http://www.soupiloto.com.br/",
+    "cnpj": "44.529.953/0001-17",
+    "metodo": "econodata",
+    "pagina_origem": "https://www.econodata.com.br/empresas/SP--SAO-PAULO/escola-para",
+    "paginas_tentadas": [
+      "http://www.soupiloto.com.br",
+      "http://www.soupiloto.com.br/contato",
+      "http://www.soupiloto.com.br/sobre",
+      "http://www.soupiloto.com.br/sobre-nos",
+      "http://www.soupiloto.com.br/quem-somos",
+      "http://www.soupiloto.com.br/politica-de-privacidade",
+      "http://www.soupiloto.com.br/politica-privacidade",
+      "http://www.soupiloto.com.br/termos",
+      "http://www.soupiloto.com.br/termos-de-uso",
+      "http://www.soupiloto.com.br/empresa",
+      "http://www.soupiloto.com.br/info"
+    ]
+  },
+  {
+    "id": 21,
+    "nome": "Auto Escola Piloto - Torre",
+    "site": "https://autoescolapiloto.net.br/",
+    "cnpj": "01.771.742/0001-83",
+    "metodo": "requests",
+    "pagina_origem": "https://autoescolapiloto.net.br",
+    "paginas_tentadas": [
+      "https://autoescolapiloto.net.br"
+    ]
+  },
+  {
+    "id": 22,
+    "nome": "Aero São José dos Campos | Escola de Aviação | Ciac | Aeroclube | Comissário de Voo | Mecânico | Piloto avião Helicóptero",
+    "site": "http://www.aerosjcampos.com.br/",
+    "cnpj": "40.963.394/0001-06",
+    "metodo": "requests",
+    "pagina_origem": "http://www.aerosjcampos.com.br/politica-de-privacidade",
+    "paginas_tentadas": [
+      "http://www.aerosjcampos.com.br",
+      "http://www.aerosjcampos.com.br/contato",
+      "http://www.aerosjcampos.com.br/sobre",
+      "http://www.aerosjcampos.com.br/sobre-nos",
+      "http://www.aerosjcampos.com.br/quem-somos",
+      "http://www.aerosjcampos.com.br/politica-de-privacidade"
+    ]
+  },
+  {
+    "id": 23,
+    "nome": "Aeroclube de Londrina",
+    "site": "http://aeroclubedelondrina.com.br/",
+    "cnpj": "52.148.904/0001-62",
+    "metodo": "econodata",
+    "pagina_origem": "https://www.econodata.com.br/empresas/SP--SAO-PAULO/aeroclube",
+    "paginas_tentadas": [
+      "http://aeroclubedelondrina.com.br",
+      "http://aeroclubedelondrina.com.br/contato",
+      "http://aeroclubedelondrina.com.br/sobre",
+      "http://aeroclubedelondrina.com.br/sobre-nos",
+      "http://aeroclubedelondrina.com.br/quem-somos",
+      "http://aeroclubedelondrina.com.br/politica-de-privacidade",
+      "http://aeroclubedelondrina.com.br/politica-privacidade",
+      "http://aeroclubedelondrina.com.br/termos",
+      "http://aeroclubedelondrina.com.br/termos-de-uso",
+      "http://aeroclubedelondrina.com.br/empresa",
+      "http://aeroclubedelondrina.com.br/info"
+    ]
+  },
+  {
+    "id": 24,
+    "nome": "Sierra Bravo Escola de Aviação",
+    "site": "http://www.sierrabravo.com.br/",
+    "cnpj": "15.828.732/0001-41",
+    "metodo": "requests",
+    "pagina_origem": "http://www.sierrabravo.com.br",
+    "paginas_tentadas": [
+      "http://www.sierrabravo.com.br"
+    ]
+  },
+  {
+    "id": 25,
+    "nome": "Escola Aero - Por Trás da Aviação",
+    "site": "https://escolaaero.com.br/",
+    "cnpj": "54.225.636/0001-60",
+    "metodo": "econodata",
+    "pagina_origem": "https://www.econodata.com.br/empresas/SP--SAO-PAULO/escola-aero",
+    "paginas_tentadas": [
+      "https://escolaaero.com.br",
+      "https://escolaaero.com.br/contato",
+      "https://escolaaero.com.br/sobre",
+      "https://escolaaero.com.br/sobre-nos",
+      "https://escolaaero.com.br/quem-somos",
+      "https://escolaaero.com.br/politica-de-privacidade",
+      "https://escolaaero.com.br/politica-privacidade",
+      "https://escolaaero.com.br/termos",
+      "https://escolaaero.com.br/termos-de-uso",
+      "https://escolaaero.com.br/empresa",
+      "https://escolaaero.com.br/info"
+    ]
+  },
+  {
+    "id": 26,
+    "nome": "BSB Aviation Escola de Aviação Civil Ltda.",
+    "site": "",
+    "cnpj": "09.574.595/0001-63",
+    "metodo": "econodata",
+    "pagina_origem": "https://www.econodata.com.br/empresas/SP--SAO-PAULO/bsb",
+    "paginas_tentadas": []
+  },
+  {
+    "id": 27,
+    "nome": "Academia de Pilotos",
+    "site": "",
+    "cnpj": "44.379.524/0001-00",
+    "metodo": "econodata",
+    "pagina_origem": "https://www.econodata.com.br/empresas/SP--SAO-PAULO/academia",
+    "paginas_tentadas": []
+  },
+  {
+    "id": 28,
+    "nome": "Aeroclube de Voo A Vela CTA - CVV-CTA",
+    "site": "http://www.vooavelacta.com.br/",
+    "cnpj": "52.148.904/0001-62",
+    "metodo": "econodata",
+    "pagina_origem": "https://www.econodata.com.br/empresas/SP--SAO-PAULO/aeroclube",
+    "paginas_tentadas": [
+      "http://www.vooavelacta.com.br",
+      "http://www.vooavelacta.com.br/contato",
+      "http://www.vooavelacta.com.br/sobre",
+      "http://www.vooavelacta.com.br/sobre-nos",
+      "http://www.vooavelacta.com.br/quem-somos",
+      "http://www.vooavelacta.com.br/politica-de-privacidade",
+      "http://www.vooavelacta.com.br/politica-privacidade",
+      "http://www.vooavelacta.com.br/termos",
+      "http://www.vooavelacta.com.br/termos-de-uso",
+      "http://www.vooavelacta.com.br/empresa",
+      "http://www.vooavelacta.com.br/info"
+    ]
+  },
+  {
+    "id": 29,
+    "nome": "Aeroclube do Paraná",
+    "site": "http://www.aeroclubeparana.com.br/",
+    "cnpj": "52.148.904/0001-62",
+    "metodo": "econodata",
+    "pagina_origem": "https://www.econodata.com.br/empresas/SP--SAO-PAULO/aeroclube",
+    "paginas_tentadas": [
+      "http://www.aeroclubeparana.com.br",
+      "http://www.aeroclubeparana.com.br/contato",
+      "http://www.aeroclubeparana.com.br/sobre",
+      "http://www.aeroclubeparana.com.br/sobre-nos",
+      "http://www.aeroclubeparana.com.br/quem-somos",
+      "http://www.aeroclubeparana.com.br/politica-de-privacidade",
+      "http://www.aeroclubeparana.com.br/politica-privacidade",
+      "http://www.aeroclubeparana.com.br/termos",
+      "http://www.aeroclubeparana.com.br/termos-de-uso",
+      "http://www.aeroclubeparana.com.br/empresa",
+      "http://www.aeroclubeparana.com.br/info"
+    ]
+  },
+  {
+    "id": 30,
+    "nome": "CEAB Escola de Comissário de Bordo e Aeromoça",
+    "site": "https://ceabbrasil.com.br/",
+    "cnpj": "03.161.342/0001-81",
+    "metodo": "requests",
+    "pagina_origem": "https://ceabbrasil.com.br",
+    "paginas_tentadas": [
+      "https://ceabbrasil.com.br"
+    ]
+  },
+  {
+    "id": 31,
+    "nome": "Aeroclube de Uberlândia",
+    "site": "http://www.aeroclubedeuberlandia.com.br/",
+    "cnpj": "52.148.904/0001-62",
+    "metodo": "econodata",
+    "pagina_origem": "https://www.econodata.com.br/empresas/SP--SAO-PAULO/aeroclube",
+    "paginas_tentadas": [
+      "http://www.aeroclubedeuberlandia.com.br",
+      "http://www.aeroclubedeuberlandia.com.br/contato",
+      "http://www.aeroclubedeuberlandia.com.br/sobre",
+      "http://www.aeroclubedeuberlandia.com.br/sobre-nos",
+      "http://www.aeroclubedeuberlandia.com.br/quem-somos",
+      "http://www.aeroclubedeuberlandia.com.br/politica-de-privacidade",
+      "http://www.aeroclubedeuberlandia.com.br/politica-privacidade",
+      "http://www.aeroclubedeuberlandia.com.br/termos",
+      "http://www.aeroclubedeuberlandia.com.br/termos-de-uso",
+      "http://www.aeroclubedeuberlandia.com.br/empresa",
+      "http://www.aeroclubedeuberlandia.com.br/info"
+    ]
+  },
+  {
+    "id": 32,
+    "nome": "Aeroclube do Rio Grande do Sul",
+    "site": "http://www.args.com.br/",
+    "cnpj": "52.148.904/0001-62",
+    "metodo": "econodata",
+    "pagina_origem": "https://www.econodata.com.br/empresas/SP--SAO-PAULO/aeroclube",
+    "paginas_tentadas": [
+      "http://www.args.com.br",
+      "http://www.args.com.br/contato",
+      "http://www.args.com.br/sobre",
+      "http://www.args.com.br/sobre-nos",
+      "http://www.args.com.br/quem-somos",
+      "http://www.args.com.br/politica-de-privacidade",
+      "http://www.args.com.br/politica-privacidade",
+      "http://www.args.com.br/termos",
+      "http://www.args.com.br/termos-de-uso",
+      "http://www.args.com.br/empresa",
+      "http://www.args.com.br/info"
+    ]
+  },
+  {
+    "id": 33,
+    "nome": "Dumont Escola de Aviação",
+    "site": "https://www.voedumont.com.br/",
+    "cnpj": "29.363.874/0001-95",
+    "metodo": "econodata",
+    "pagina_origem": "https://www.econodata.com.br/empresas/SP--SAO-PAULO/dumont-escola-de-aviacao",
+    "paginas_tentadas": [
+      "https://www.voedumont.com.br",
+      "https://www.voedumont.com.br/contato",
+      "https://www.voedumont.com.br/sobre",
+      "https://www.voedumont.com.br/sobre-nos",
+      "https://www.voedumont.com.br/quem-somos",
+      "https://www.voedumont.com.br/politica-de-privacidade",
+      "https://www.voedumont.com.br/politica-privacidade",
+      "https://www.voedumont.com.br/termos",
+      "https://www.voedumont.com.br/termos-de-uso",
+      "https://www.voedumont.com.br/empresa",
+      "https://www.voedumont.com.br/info"
+    ]
+  },
+  {
+    "id": 34,
+    "nome": "CIAC ESAER - Escola de Aviação Civil",
+    "site": "http://www.esaer.com.br/",
+    "cnpj": "65.175.606/0001-03",
+    "metodo": "requests",
+    "pagina_origem": "http://www.esaer.com.br",
+    "paginas_tentadas": [
+      "http://www.esaer.com.br"
+    ]
+  },
+  {
+    "id": 35,
+    "nome": "Aeroclube de Pernambuco",
+    "site": "http://www.aeroclubepe.com.br/",
+    "cnpj": "52.148.904/0001-62",
+    "metodo": "econodata",
+    "pagina_origem": "https://www.econodata.com.br/empresas/SP--SAO-PAULO/aeroclube",
+    "paginas_tentadas": [
+      "http://www.aeroclubepe.com.br",
+      "http://www.aeroclubepe.com.br/contato",
+      "http://www.aeroclubepe.com.br/sobre",
+      "http://www.aeroclubepe.com.br/sobre-nos",
+      "http://www.aeroclubepe.com.br/quem-somos",
+      "http://www.aeroclubepe.com.br/politica-de-privacidade",
+      "http://www.aeroclubepe.com.br/politica-privacidade",
+      "http://www.aeroclubepe.com.br/termos",
+      "http://www.aeroclubepe.com.br/termos-de-uso",
+      "http://www.aeroclubepe.com.br/empresa",
+      "http://www.aeroclubepe.com.br/info"
+    ]
+  },
+  {
+    "id": 36,
+    "nome": "Aeroclube de Eldorado do Sul",
+    "site": "http://www.aeroeldorado.com.br/",
+    "cnpj": "96.750.450/0001-70",
+    "metodo": "requests",
+    "pagina_origem": "http://www.aeroeldorado.com.br",
+    "paginas_tentadas": [
+      "http://www.aeroeldorado.com.br"
+    ]
+  },
+  {
+    "id": 37,
+    "nome": "Aerosul Escola de Aviação Civil",
+    "site": "http://www.aerosul-rs.com.br/",
+    "cnpj": null,
+    "paginas_tentadas": [
+      "http://www.aerosul-rs.com.br",
+      "http://www.aerosul-rs.com.br/contato",
+      "http://www.aerosul-rs.com.br/sobre",
+      "http://www.aerosul-rs.com.br/sobre-nos",
+      "http://www.aerosul-rs.com.br/quem-somos",
+      "http://www.aerosul-rs.com.br/politica-de-privacidade",
+      "http://www.aerosul-rs.com.br/politica-privacidade",
+      "http://www.aerosul-rs.com.br/termos",
+      "http://www.aerosul-rs.com.br/termos-de-uso",
+      "http://www.aerosul-rs.com.br/empresa",
+      "http://www.aerosul-rs.com.br/info"
+    ]
+  },
+  {
+    "id": 38,
+    "nome": "FLY CENTER ESCOLA DE AVIAÇÃO - CAMPINAS",
+    "site": "https://www.flycenterweb.com.br/",
+    "cnpj": "33.136.896/0001-90",
+    "metodo": "econodata",
+    "pagina_origem": "https://www.econodata.com.br/empresas/SP--SAO-PAULO/fly",
+    "paginas_tentadas": [
+      "https://www.flycenterweb.com.br",
+      "https://www.flycenterweb.com.br/contato",
+      "https://www.flycenterweb.com.br/sobre",
+      "https://www.flycenterweb.com.br/sobre-nos",
+      "https://www.flycenterweb.com.br/quem-somos",
+      "https://www.flycenterweb.com.br/politica-de-privacidade",
+      "https://www.flycenterweb.com.br/politica-privacidade",
+      "https://www.flycenterweb.com.br/termos",
+      "https://www.flycenterweb.com.br/termos-de-uso",
+      "https://www.flycenterweb.com.br/empresa",
+      "https://www.flycenterweb.com.br/info"
+    ]
+  },
+  {
+    "id": 39,
+    "nome": "VOLARE Escola de Aviação Civil",
+    "site": "http://voarvolare.com.br/",
+    "cnpj": "16.859.466/0001-87",
+    "metodo": "econodata",
+    "pagina_origem": "https://www.econodata.com.br/empresas/SP--SAO-PAULO/volare",
+    "paginas_tentadas": [
+      "http://voarvolare.com.br",
+      "http://voarvolare.com.br/contato",
+      "http://voarvolare.com.br/sobre",
+      "http://voarvolare.com.br/sobre-nos",
+      "http://voarvolare.com.br/quem-somos",
+      "http://voarvolare.com.br/politica-de-privacidade",
+      "http://voarvolare.com.br/politica-privacidade",
+      "http://voarvolare.com.br/termos",
+      "http://voarvolare.com.br/termos-de-uso",
+      "http://voarvolare.com.br/empresa",
+      "http://voarvolare.com.br/info"
+    ]
+  },
+  {
+    "id": 40,
+    "nome": "Escola de Aviação Civil Pampulha",
+    "site": "https://www.eacpampulha.com.br/",
+    "cnpj": "07.594.978/0001-78",
+    "metodo": "econodata",
+    "pagina_origem": "https://www.econodata.com.br/empresas/SP--SAO-PAULO/escola",
+    "paginas_tentadas": [
+      "https://www.eacpampulha.com.br",
+      "https://www.eacpampulha.com.br/contato",
+      "https://www.eacpampulha.com.br/sobre",
+      "https://www.eacpampulha.com.br/sobre-nos",
+      "https://www.eacpampulha.com.br/quem-somos",
+      "https://www.eacpampulha.com.br/politica-de-privacidade",
+      "https://www.eacpampulha.com.br/politica-privacidade",
+      "https://www.eacpampulha.com.br/termos",
+      "https://www.eacpampulha.com.br/termos-de-uso",
+      "https://www.eacpampulha.com.br/empresa",
+      "https://www.eacpampulha.com.br/info"
+    ]
+  },
+  {
+    "id": 41,
+    "nome": "Curso de Ciências Aeronáuticas da PUCRS",
+    "site": "https://www.pucrs.br/politecnica/curso/ciencias-aeronauticas/#apresentacao",
+    "cnpj": "44.705.882/3529-41",
+    "metodo": "requests",
+    "pagina_origem": "https://www.pucrs.br",
+    "paginas_tentadas": [
+      "https://www.pucrs.br"
+    ]
+  },
+  {
+    "id": 42,
+    "nome": "Classic Escola de Aviação Civil",
+    "site": "https://www.instagram.com/classicair/",
+    "cnpj": "38.265.788/0001-30",
+    "metodo": "econodata",
+    "pagina_origem": "https://www.econodata.com.br/empresas/SP--SAO-PAULO/classic",
+    "paginas_tentadas": [
+      "https://www.instagram.com",
+      "https://www.instagram.com/contato",
+      "https://www.instagram.com/sobre",
+      "https://www.instagram.com/sobre-nos",
+      "https://www.instagram.com/quem-somos",
+      "https://www.instagram.com/politica-de-privacidade",
+      "https://www.instagram.com/politica-privacidade",
+      "https://www.instagram.com/termos",
+      "https://www.instagram.com/termos-de-uso",
+      "https://www.instagram.com/empresa",
+      "https://www.instagram.com/info"
+    ]
+  },
+  {
+    "id": 43,
+    "nome": "AeroAir - Produtos Aeronáuticos",
+    "site": "http://www.aeroair.com.br/",
+    "cnpj": "52.471.637/0001-60",
+    "metodo": "requests",
+    "pagina_origem": "http://www.aeroair.com.br",
+    "paginas_tentadas": [
+      "http://www.aeroair.com.br"
+    ]
+  },
+  {
+    "id": 44,
+    "nome": "PROAV - Escola de Aviação Civil",
+    "site": "http://www.voeproav.com.br/",
+    "cnpj": "22.525.709/0001-43",
+    "metodo": "econodata",
+    "pagina_origem": "https://www.econodata.com.br/empresas/SP--SAO-PAULO/proav",
+    "paginas_tentadas": [
+      "http://www.voeproav.com.br",
+      "http://www.voeproav.com.br/contato",
+      "http://www.voeproav.com.br/sobre",
+      "http://www.voeproav.com.br/sobre-nos",
+      "http://www.voeproav.com.br/quem-somos",
+      "http://www.voeproav.com.br/politica-de-privacidade",
+      "http://www.voeproav.com.br/politica-privacidade",
+      "http://www.voeproav.com.br/termos",
+      "http://www.voeproav.com.br/termos-de-uso",
+      "http://www.voeproav.com.br/empresa",
+      "http://www.voeproav.com.br/info"
+    ]
+  },
+  {
+    "id": 45,
+    "nome": "SAFE - Escola de Aviação (Base Campinas - SP)",
+    "site": "http://www.voesafe.com.br/",
+    "cnpj": "47.953.622/0001-06",
+    "metodo": "econodata",
+    "pagina_origem": "https://www.econodata.com.br/empresas/SP--SAO-PAULO/safe",
+    "paginas_tentadas": [
+      "http://www.voesafe.com.br",
+      "http://www.voesafe.com.br/contato",
+      "http://www.voesafe.com.br/sobre",
+      "http://www.voesafe.com.br/sobre-nos",
+      "http://www.voesafe.com.br/quem-somos",
+      "http://www.voesafe.com.br/politica-de-privacidade",
+      "http://www.voesafe.com.br/politica-privacidade",
+      "http://www.voesafe.com.br/termos",
+      "http://www.voesafe.com.br/termos-de-uso",
+      "http://www.voesafe.com.br/empresa",
+      "http://www.voesafe.com.br/info"
+    ]
+  },
+  {
+    "id": 46,
+    "nome": "Aeroclube São José do Rio Preto | Escola de Aviação",
+    "site": "https://aerocluberiopreto.com/",
+    "cnpj": "52.148.904/0001-62",
+    "metodo": "econodata",
+    "pagina_origem": "https://www.econodata.com.br/empresas/SP--SAO-PAULO/aeroclube",
+    "paginas_tentadas": [
+      "https://aerocluberiopreto.com",
+      "https://aerocluberiopreto.com/contato",
+      "https://aerocluberiopreto.com/sobre",
+      "https://aerocluberiopreto.com/sobre-nos",
+      "https://aerocluberiopreto.com/quem-somos",
+      "https://aerocluberiopreto.com/politica-de-privacidade",
+      "https://aerocluberiopreto.com/politica-privacidade",
+      "https://aerocluberiopreto.com/termos",
+      "https://aerocluberiopreto.com/termos-de-uso",
+      "https://aerocluberiopreto.com/empresa",
+      "https://aerocluberiopreto.com/info"
+    ]
+  },
+  {
+    "id": 47,
+    "nome": "Aeroclube de Campinas",
+    "site": "http://www.aeroclubedecampinas.com.br/",
+    "cnpj": "52.148.904/0001-62",
+    "metodo": "econodata",
+    "pagina_origem": "https://www.econodata.com.br/empresas/SP--SAO-PAULO/aeroclube",
+    "paginas_tentadas": [
+      "http://www.aeroclubedecampinas.com.br",
+      "http://www.aeroclubedecampinas.com.br/contato",
+      "http://www.aeroclubedecampinas.com.br/sobre",
+      "http://www.aeroclubedecampinas.com.br/sobre-nos",
+      "http://www.aeroclubedecampinas.com.br/quem-somos",
+      "http://www.aeroclubedecampinas.com.br/politica-de-privacidade",
+      "http://www.aeroclubedecampinas.com.br/politica-privacidade",
+      "http://www.aeroclubedecampinas.com.br/termos",
+      "http://www.aeroclubedecampinas.com.br/termos-de-uso",
+      "http://www.aeroclubedecampinas.com.br/empresa",
+      "http://www.aeroclubedecampinas.com.br/info"
+    ]
+  },
+  {
+    "id": 48,
+    "nome": "Faculdade AEROTD",
+    "site": "https://aerotd.com.br/",
+    "cnpj": "61.590.410/0001-24",
+    "metodo": "econodata",
+    "pagina_origem": "https://www.econodata.com.br/empresas/SP--SAO-PAULO/faculdade",
+    "paginas_tentadas": [
+      "https://aerotd.com.br",
+      "https://aerotd.com.br/contato",
+      "https://aerotd.com.br/sobre",
+      "https://aerotd.com.br/sobre-nos",
+      "https://aerotd.com.br/quem-somos",
+      "https://aerotd.com.br/politica-de-privacidade",
+      "https://aerotd.com.br/politica-privacidade",
+      "https://aerotd.com.br/termos",
+      "https://aerotd.com.br/termos-de-uso",
+      "https://aerotd.com.br/empresa",
+      "https://aerotd.com.br/info"
+    ]
+  },
+  {
+    "id": 49,
+    "nome": "Aeroclube do Amazonas",
+    "site": "http://www.aeroclubedoamazonas.com/",
+    "cnpj": "52.148.904/0001-62",
+    "metodo": "econodata",
+    "pagina_origem": "https://www.econodata.com.br/empresas/SP--SAO-PAULO/aeroclube",
+    "paginas_tentadas": [
+      "http://www.aeroclubedoamazonas.com",
+      "http://www.aeroclubedoamazonas.com/contato",
+      "http://www.aeroclubedoamazonas.com/sobre",
+      "http://www.aeroclubedoamazonas.com/sobre-nos",
+      "http://www.aeroclubedoamazonas.com/quem-somos",
+      "http://www.aeroclubedoamazonas.com/politica-de-privacidade",
+      "http://www.aeroclubedoamazonas.com/politica-privacidade",
+      "http://www.aeroclubedoamazonas.com/termos",
+      "http://www.aeroclubedoamazonas.com/termos-de-uso",
+      "http://www.aeroclubedoamazonas.com/empresa",
+      "http://www.aeroclubedoamazonas.com/info"
+    ]
+  },
+  {
+    "id": 50,
+    "nome": "EJ Escola de Aeronáutica | Base Jundiaí",
+    "site": "http://www.ej.com.br/",
+    "cnpj": "07.594.978/0001-78",
+    "metodo": "econodata",
+    "pagina_origem": "https://www.econodata.com.br/empresas/SP--SAO-PAULO/escola",
+    "paginas_tentadas": [
+      "http://www.ej.com.br",
+      "http://www.ej.com.br/contato",
+      "http://www.ej.com.br/sobre",
+      "http://www.ej.com.br/sobre-nos",
+      "http://www.ej.com.br/quem-somos",
+      "http://www.ej.com.br/politica-de-privacidade",
+      "http://www.ej.com.br/politica-privacidade",
+      "http://www.ej.com.br/termos",
+      "http://www.ej.com.br/termos-de-uso",
+      "http://www.ej.com.br/empresa",
+      "http://www.ej.com.br/info"
+    ]
+  }
+]

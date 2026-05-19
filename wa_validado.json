@@ -1,0 +1,402 @@
+[
+  {
+    "id": 1,
+    "nome": "ATC - Faculdade de Aviação Civil",
+    "numero": "551130905548",
+    "wa_ativo": false,
+    "wa_jid": "551130905548@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 2,
+    "nome": "Flight Class",
+    "numero": "5551995952523",
+    "wa_ativo": true,
+    "wa_jid": "555195952523@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 3,
+    "nome": "VelAir Escola de Aviação Civil",
+    "numero": "5531971557071",
+    "wa_ativo": true,
+    "wa_jid": "553171557071@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 4,
+    "nome": "Grandis Soluções - Consultoria Aeronáutica e Cursos para Pilotos e Comissários de voo",
+    "numero": "5561993219967",
+    "wa_ativo": true,
+    "wa_jid": "556193219967@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 5,
+    "nome": "Sky Escola de Aeronáutica",
+    "numero": "5562999614779",
+    "wa_ativo": true,
+    "wa_jid": "556299614779@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 6,
+    "nome": "Aerocurso - Escola de Aviação Civil | CIAC 22",
+    "numero": "5592994262467",
+    "wa_ativo": true,
+    "wa_jid": "559294262467@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 7,
+    "nome": "EPEAC Aviação",
+    "numero": null,
+    "wa_ativo": false,
+    "wa_jid": null,
+    "wa_name": null
+  },
+  {
+    "id": 8,
+    "nome": "Aero Agrícola Santos Dumont",
+    "numero": "555137237000",
+    "wa_ativo": true,
+    "wa_jid": "555137237000@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 9,
+    "nome": "DH Escola de Aviação Civil",
+    "numero": "5537991718505",
+    "wa_ativo": true,
+    "wa_jid": "553791718505@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 10,
+    "nome": "Go Air Escola de Aviação Civil",
+    "numero": "551120896300",
+    "wa_ativo": false,
+    "wa_jid": "551120896300@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 11,
+    "nome": "Bravo Escola de Aviação Civil",
+    "numero": "5511931463200",
+    "wa_ativo": true,
+    "wa_jid": "5511931463200@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 12,
+    "nome": "BrasFlight Escola Brasileira de Aviação Ltda",
+    "numero": "558121619533",
+    "wa_ativo": false,
+    "wa_jid": "558121619533@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 13,
+    "nome": "Airtraining Escola de Aviação Civil",
+    "numero": "551145820891",
+    "wa_ativo": false,
+    "wa_jid": "551145820891@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 14,
+    "nome": "Vertical Escola de Aviação Civil Ltda.",
+    "numero": "5511985229242",
+    "wa_ativo": true,
+    "wa_jid": "5511985229242@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 15,
+    "nome": "Sky Eagles",
+    "numero": "5541999080448",
+    "wa_ativo": true,
+    "wa_jid": "554199080448@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 16,
+    "nome": "Voe Mais Escola de Aeronáutica",
+    "numero": "556239916612",
+    "wa_ativo": true,
+    "wa_jid": "556239916612@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 17,
+    "nome": "Ícaro Aviação",
+    "numero": "553125144690",
+    "wa_ativo": false,
+    "wa_jid": "553125144690@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 18,
+    "nome": "Starflight Escola de Aviação Civil",
+    "numero": "553134916051",
+    "wa_ativo": true,
+    "wa_jid": "553134916051@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 19,
+    "nome": "Escola Piloto de Engenharia Química",
+    "numero": null,
+    "wa_ativo": false,
+    "wa_jid": null,
+    "wa_name": null
+  },
+  {
+    "id": 20,
+    "nome": "Escola para Piloto de Avião",
+    "numero": "5516994303051",
+    "wa_ativo": true,
+    "wa_jid": "5516994303051@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 21,
+    "nome": "Auto Escola Piloto - Torre",
+    "numero": null,
+    "wa_ativo": false,
+    "wa_jid": null,
+    "wa_name": null
+  },
+  {
+    "id": 22,
+    "nome": "Aero São José dos Campos | Escola de Aviação | Ciac | Aeroclube | Comissário de Voo | Mecânico | Piloto avião Helicóptero",
+    "numero": "551233419901",
+    "wa_ativo": false,
+    "wa_jid": "551233419901@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 23,
+    "nome": "Aeroclube de Londrina",
+    "numero": "554333258751",
+    "wa_ativo": true,
+    "wa_jid": "554333258751@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 24,
+    "nome": "Sierra Bravo Escola de Aviação",
+    "numero": "5519995897279",
+    "wa_ativo": true,
+    "wa_jid": "5519995897279@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 25,
+    "nome": "Escola Aero - Por Trás da Aviação",
+    "numero": "5535997177459",
+    "wa_ativo": true,
+    "wa_jid": "553597177459@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 26,
+    "nome": "BSB Aviation Escola de Aviação Civil Ltda.",
+    "numero": "5561994449926",
+    "wa_ativo": false,
+    "wa_jid": "556194449926@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 27,
+    "nome": "Academia de Pilotos",
+    "numero": "5562995553456",
+    "wa_ativo": true,
+    "wa_jid": "556295553456@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 28,
+    "nome": "Aeroclube de Voo A Vela CTA - CVV-CTA",
+    "numero": "551239444177",
+    "wa_ativo": false,
+    "wa_jid": "551239444177@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 29,
+    "nome": "Aeroclube do Paraná",
+    "numero": "554132563003",
+    "wa_ativo": true,
+    "wa_jid": "554132563003@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 30,
+    "nome": "CEAB Escola de Comissário de Bordo e Aeromoça",
+    "numero": "5511961461000",
+    "wa_ativo": true,
+    "wa_jid": "5511961461000@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 31,
+    "nome": "Aeroclube de Uberlândia",
+    "numero": "553432124999",
+    "wa_ativo": false,
+    "wa_jid": "553432124999@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 32,
+    "nome": "Aeroclube do Rio Grande do Sul",
+    "numero": "555132456060",
+    "wa_ativo": false,
+    "wa_jid": "555132456060@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 33,
+    "nome": "Dumont Escola de Aviação",
+    "numero": "5511943205397",
+    "wa_ativo": true,
+    "wa_jid": "5511943205397@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 34,
+    "nome": "CIAC ESAER - Escola de Aviação Civil",
+    "numero": "5531971178877",
+    "wa_ativo": true,
+    "wa_jid": "553171178877@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 35,
+    "nome": "Aeroclube de Pernambuco",
+    "numero": "5581992378312",
+    "wa_ativo": true,
+    "wa_jid": "558192378312@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 36,
+    "nome": "Aeroclube de Eldorado do Sul",
+    "numero": "555138062019",
+    "wa_ativo": false,
+    "wa_jid": "555138062019@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 37,
+    "nome": "Aerosul Escola de Aviação Civil",
+    "numero": "555132257680",
+    "wa_ativo": false,
+    "wa_jid": "555132257680@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 38,
+    "nome": "FLY CENTER ESCOLA DE AVIAÇÃO - CAMPINAS",
+    "numero": "551925131299",
+    "wa_ativo": false,
+    "wa_jid": "551925131299@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 39,
+    "nome": "VOLARE Escola de Aviação Civil",
+    "numero": "554333984343",
+    "wa_ativo": true,
+    "wa_jid": "554333984343@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 40,
+    "nome": "Escola de Aviação Civil Pampulha",
+    "numero": "553134968958",
+    "wa_ativo": false,
+    "wa_jid": "553134968958@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 41,
+    "nome": "Curso de Ciências Aeronáuticas da PUCRS",
+    "numero": "555133203542",
+    "wa_ativo": false,
+    "wa_jid": "555133203542@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 42,
+    "nome": "Classic Escola de Aviação Civil",
+    "numero": "5511996201694",
+    "wa_ativo": true,
+    "wa_jid": "5511996201694@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 43,
+    "nome": "AeroAir - Produtos Aeronáuticos",
+    "numero": "5541998746616",
+    "wa_ativo": true,
+    "wa_jid": "554198746616@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 44,
+    "nome": "PROAV - Escola de Aviação Civil",
+    "numero": "5514997778318",
+    "wa_ativo": true,
+    "wa_jid": "5514997778318@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 45,
+    "nome": "SAFE - Escola de Aviação (Base Campinas - SP)",
+    "numero": "5512997069562",
+    "wa_ativo": true,
+    "wa_jid": "5512997069562@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 46,
+    "nome": "Aeroclube São José do Rio Preto | Escola de Aviação",
+    "numero": "5517996289052",
+    "wa_ativo": true,
+    "wa_jid": "5517996289052@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 47,
+    "nome": "Aeroclube de Campinas",
+    "numero": "551937467200",
+    "wa_ativo": false,
+    "wa_jid": "551937467200@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 48,
+    "nome": "Faculdade AEROTD",
+    "numero": "554832235191",
+    "wa_ativo": false,
+    "wa_jid": "554832235191@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 49,
+    "nome": "Aeroclube do Amazonas",
+    "numero": "5592986047090",
+    "wa_ativo": true,
+    "wa_jid": "559286047090@s.whatsapp.net",
+    "wa_name": null
+  },
+  {
+    "id": 50,
+    "nome": "EJ Escola de Aeronáutica | Base Jundiaí",
+    "numero": "551632639160",
+    "wa_ativo": false,
+    "wa_jid": "551632639160@s.whatsapp.net",
+    "wa_name": null
+  }
+]

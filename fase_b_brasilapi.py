@@ -11,9 +11,10 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 if sys.platform == "win32":
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 
-BASE = r"G:\Meu Drive\Claude\workspace\entregas\leads-certificadoras-bh-2026-04-22"
-IN = os.path.join(BASE, "cnpj_encontrados.json")
-OUT = os.path.join(BASE, "cnpj_enriquecidos.json")
+from pathlib import Path
+BASE = Path(__file__).parent
+IN = BASE / "cnpj_encontrados.json"
+OUT = BASE / "cnpj_enriquecidos.json"
 
 with open(IN, "r", encoding="utf-8") as fh:
     leads = json.load(fh)

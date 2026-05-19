@@ -101,28 +101,23 @@ def aplicar_schema_automatico(db_url: str, schema_sql: str) -> bool:
 
 def instrucoes_modo_manual(schema_sql: str, supabase_url: str) -> None:
     """Imprime instruções para o usuário aplicar o schema manualmente."""
+    project_ref = supabase_url.replace("https://", "").split(".")[0]
+    sql_editor = f"https://supabase.com/dashboard/project/{project_ref}/sql/new"
+
     print()
     print("=" * 70)
-    print("  Modo manual — aplicar o schema")
+    print("  Modo manual — aplicar o schema pelo SQL Editor")
     print("=" * 70)
     print()
-    print(f"Conteúdo a aplicar: {SCHEMA_PATH}")
+    print("1. Abra o SQL Editor do seu projeto:")
+    print(f"   {sql_editor}")
     print()
-    if "supabase.co" in supabase_url:
-        project_ref = supabase_url.replace("https://", "").split(".")[0]
-        sql_editor = f"https://supabase.com/dashboard/project/{project_ref}/sql/new"
-        print("Como aplicar no Supabase Cloud:")
-        print(f"  1. Abra o SQL Editor: {sql_editor}")
-        print("  2. Cole o conteúdo do schema.sql")
-        print("  3. Clique em 'Run'")
-    else:
-        print("Como aplicar (instância self-hosted ou compatível):")
-        print("  Opção 1 (recomendada): preencha SUPABASE_DB_URL no .env e")
-        print("                          re-rode este script (modo automático).")
-        print("  Opção 2: aplique manualmente via psql:")
-        print(f"     psql <connection-string> -f {SCHEMA_PATH}")
+    print("2. Copie e cole o conteúdo de:")
+    print(f"   {SCHEMA_PATH}")
     print()
-    print("Depois, rode novamente este script para validar:")
+    print("3. Clique em 'Run'.")
+    print()
+    print("4. Rode novamente este script para validar:")
     print("   python setup_supabase.py")
     print()
     print("=" * 70)

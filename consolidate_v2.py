@@ -34,16 +34,117 @@ if sys.platform == "win32":
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 
 BASE = Path(__file__).parent
-OUT = BASE / "leads_final.json"
+OUT  = BASE / "leads_final.json"
+
+# ── Offset de ID por segmento (evita colisão ao misturar nichos) ─────────────
+# Cada nicho ocupa uma faixa de 100 IDs. Adicione novos nichos aqui.
+SEGMENTO_ID_OFFSET: dict[str, int] = {
+    "hamburgueria":      0,    # IDs  1 – 99
+    "escola de aviação": 100,  # IDs 101 – 199
+    "escola de aviacao": 100,
+}
+
+def _id_offset(segmento: str) -> int:
+    s = (segmento or "").lower()
+    for key, off in SEGMENTO_ID_OFFSET.items():
+        if key in s:
+            return off
+    return 0
+
+
+# ── Ângulo de abordagem ──────────────────────────────────────────────────────
+
+# Resultado esperado por serviço — aparece no campo resultado_alvo de cada lead
+RESULTADO_ALVO_POR_SERVICO: dict[str, str] = {
+    "trafego_pago":         "Aumentar pedidos via Meta Ads",
+    "gmb":                  "Dominar busca local no Google Maps",
+    "trafego_pago_aviacao": "Captar matrículas via Google Ads",
+}
+
+
+def _extrair_angulo(gancho_text: str) -> tuple[str, str]:
+    """Extrai a tag [TIPO] do início do gancho.
+
+    Retorna (angulo, conteudo_sem_tag):
+      angulo  — 'DOR' | 'DESEJO' | 'OPORTUNIDADE' | 'DADO DE MERCADO' | 'Abordagem'
+      conteudo — texto do gancho sem o prefixo [TAG], pronto para uso no bot
+    """
+    if not gancho_text:
+        return ("Abordagem", "")
+    m = re.match(r"^\[([^\]]+)\]\s*", gancho_text)
+    if m:
+        return (m.group(1), gancho_text[m.end():].strip())
+    return ("Abordagem", gancho_text.strip())
+
+
+def _selecionar_gancho(gancho_list: list, lead: dict) -> str:
+    """Escolhe o gancho mais adequado ao perfil do lead.
+
+    Empresa que já anuncia → ângulo DESEJO (upsell).
+    Empresa sem anúncio   → ângulo DOR ou DADO DE MERCADO.
+    Fallback              → primeiro da lista.
+    """
+    if not gancho_list:
+        return ""
+    anuncia = (lead.get("anuncia_meta") or "").lower()
+    for item in gancho_list:
+        tag_m = re.match(r"^\[([^\]]+)\]", item or "")
+        tag = (tag_m.group(1).upper() if tag_m else "")
+        if anuncia == "sim" and "DESEJO" in tag:
+            return item
+        if anuncia != "sim" and any(k in tag for k in ("DOR", "DADO", "OPORTUNIDADE")):
+            return item
+    return gancho_list[0]
 
 
 # ---------------------------------------------------------------------
 # Modo LOCAL — comportamento histórico do CMD-3
 # ---------------------------------------------------------------------
 
+def _normalizar_tel(tel: str) -> str:
+    """Remove tudo que não é dígito e retorna os últimos 11 dígitos (DDD + número)."""
+    digits = re.sub(r"\D", "", tel or "")
+    return digits[-11:] if len(digits) >= 11 else digits
+
+def _chave_lead(lead: dict) -> str:
+    """Chave de identificação única de um lead para merge incremental.
+    Prioridade: telefone normalizado → nome+cidade (lowercase, sem espaços extras)."""
+    tel = _normalizar_tel(lead.get("telefone") or lead.get("whatsapp_numero") or "")
+    if len(tel) >= 10:
+        return f"tel:{tel}"
+    nome  = re.sub(r"\s+", " ", (lead.get("nome") or "")).strip().lower()
+    cidade = (lead.get("cidade") or "").strip().lower()
+    return f"nome:{nome}|{cidade}"
+
+
 def consolidar_local() -> tuple[list, dict]:
+    # Carrega todos os serviços disponíveis
+    try:
+        from servico_config import (
+            get_servico, processar_todos_servicos,
+            calcular_priority_score_servico, gerar_rapport,
+            gerar_gancho_dor, classificar_lead, gerar_mensagem_wa,
+        )
+        servico_principal = get_servico()  # serviço definido no .env (fallback para rapport/gancho genérico)
+        multi_servico = True
+    except ImportError:
+        servico_principal = {}
+        multi_servico = False
+        def processar_todos_servicos(lead): return {}
+        def calcular_priority_score_servico(lead, s): return 0.0
+        def gerar_rapport(lead, s): return []
+        def gerar_gancho_dor(s): return []
+        def classificar_lead(lead, s): return "media"
+        def gerar_mensagem_wa(lead, s): return None
+
     leads_by_id = {}
-    csv_path = BASE / "leads_bh_merged.csv"
+    # ── Detecta segmento desta rodada (CSV ou .env) ──────────────────────────
+    from dotenv import dotenv_values
+    _env = dotenv_values(BASE / ".env") if (BASE / ".env").exists() else {}
+    _segmento_env = (_env.get("SEGMENTO") or "Geral").strip().strip('"').strip("'")
+    _id_off = _id_offset(_segmento_env)
+
+    csv_path = BASE / "leads_merged.csv"
     if csv_path.exists():
         with csv_path.open("r", encoding="utf-8-sig") as fh:
             for i, row in enumerate(csv.DictReader(fh), 1):
@@ -58,13 +159,17 @@ def consolidar_local() -> tuple[list, dict]:
             for c in json.load(fh):
                 cnpj_by_id[c["id"]] = c
 
+    # lotes_v2 contém enriquecimento AI gerado especificamente para hamburguerias.
+    # Carregar para outros segmentos causaria contaminação (nicho, instagram errados).
     v2_by_id = {}
-    for i in range(1, 6):
-        p = BASE / "lotes_v2" / f"enriched_v2_{i}.json"
-        if p.exists():
-            with p.open("r", encoding="utf-8") as fh:
-                for item in json.load(fh):
-                    v2_by_id[item["id"]] = item
+    _segmento_lower = _segmento_env.lower()
+    if "hamburgueria" in _segmento_lower or _segmento_lower in ("", "geral"):
+        for i in range(1, 6):
+            p = BASE / "lotes_v2" / f"enriched_v2_{i}.json"
+            if p.exists():
+                with p.open("r", encoding="utf-8") as fh:
+                    for item in json.load(fh):
+                        v2_by_id[item["id"]] = item
 
     wa_by_id = {}
     wa_path = BASE / "wa_validado.json"
@@ -79,6 +184,14 @@ def consolidar_local() -> tuple[list, dict]:
         with anuncia_path.open("r", encoding="utf-8") as fh:
             for a in json.load(fh):
                 anuncia_by_id[a["id"]] = a
+
+    email_by_id = {}
+    email_path = BASE / "email_validado.json"
+    if email_path.exists():
+        with email_path.open("r", encoding="utf-8") as fh:
+            for e in json.load(fh):
+                if e.get("email"):
+                    email_by_id[e["id"]] = e
 
     v1_by_id = {}
     for i in range(1, 6):
@@ -105,12 +218,20 @@ def consolidar_local() -> tuple[list, dict]:
 
         nome = base.get("nome", "")
         endereco = base.get("endereco", "")
-        cidade_match = re.search(r"-\s*([^,-]+)\s*-\s*MG", endereco)
-        cidade = cidade_match.group(1).strip() if cidade_match else "Belo Horizonte"
-        bairro_match = re.search(
-            r",\s*([^-]+?)\s*-\s*(?:Belo Horizonte|Contagem|Betim|Nova Lima|Ibirité|Santa Luzia|Sabará)",
-            endereco,
-        )
+
+        # Extrai cidade e bairro de endereço brasileiro (qualquer estado)
+        # Formato típico: "Rua X, 123 - Bairro, Cidade - UF, CEP, Brazil"
+        # Pega o par "Cidade - UF" imediatamente antes do CEP
+        cidade_match = re.search(r',\s*([^,\-]+?)\s*-\s*([A-Z]{2}),\s*\d{5}', endereco)
+        if cidade_match:
+            cidade = cidade_match.group(1).strip()
+        else:
+            # Fallback: qualquer "Cidade - UF" no endereço
+            cidade_match2 = re.search(r'([A-Za-zÀ-ÿ][A-Za-zÀ-ÿ\s\.]+?)\s*-\s*([A-Z]{2})\b', endereco)
+            cidade = cidade_match2.group(1).strip() if cidade_match2 else ""
+
+        # Extrai bairro: texto entre vírgula e o par "Cidade - UF"
+        bairro_match = re.search(r'-\s*([^,\-]+?)\s*,\s*[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ\s]+?\s*-\s*[A-Z]{2},', endereco)
         bairro = bairro_match.group(1).strip() if bairro_match else v2.get("bairro_atuacao", "")
 
         try:
@@ -126,17 +247,72 @@ def consolidar_local() -> tuple[list, dict]:
         dono_bonus = 15 if v2.get("dono_identificado") and "nao_identificado" not in dono_id else 0
         ig_url = (v2.get("instagram") or {}).get("url") or ""
         ig_bonus = 5 if "http" in ig_url else 0
-        priority_score = round(gmn_score * 0.3 + q_score * 5 + wa_bonus + dono_bonus + ig_bonus, 1)
+        priority_score_base = round(gmn_score * 0.3 + q_score * 5 + wa_bonus + dono_bonus + ig_bonus, 1)
+
+        # Segmento deste lead (do CSV ou do .env)
+        segmento_lead = (base.get("segmento") or _segmento_env).strip().strip('"').strip("'")
+
+        # Score específico do serviço (sobrepõe o base se configurado)
+        lead_parcial = {
+            "whatsapp_ativo": wa.get("wa_ativo", False),
+            "dono": None,  # preenchido abaixo
+            "site": base.get("site"),
+            "maps_nota": base.get("nota"),
+            "maps_avaliacoes": base.get("avaliacoes"),
+            "maps_recencia_dias": base.get("recencia_dias"),
+            "segmento": segmento_lead,
+        }
+        servico_score = calcular_priority_score_servico(lead_parcial, servico_principal)
+        priority_score = round(priority_score_base + servico_score, 1) if servico_principal else priority_score_base
 
         dono_raw = v2.get("dono_identificado") or ""
         dono_limpo = None
         if dono_raw and "nao_identificado" not in dono_raw.lower() and "nao_encontrado" not in dono_raw.lower():
             dono_limpo = re.split(r"[\(,]", dono_raw)[0].strip()
 
+        # Fallback: usa primeiro sócio do CNPJ quando dono_identificado não foi preenchido
+        if not dono_limpo:
+            socios_cnpj_list = [s for s in (cnpj.get("qsa") or []) if s.get("nome")]
+            if socios_cnpj_list:
+                nome_socio = socios_cnpj_list[0]["nome"].title()
+                # Filtra sócios que são PJ (razão social no lugar de pessoa física)
+                palavras = nome_socio.split()
+                is_pj = any(p.lower() in ("ltda","s/a","sa","eireli","epp","me","holding","participacoes") for p in palavras)
+                if not is_pj:
+                    dono_limpo = nome_socio
+                    dono_raw = nome_socio
+
         wa_numero = wa.get("numero") or re.sub(r"\D", "", base.get("whatsapp") or "")
 
+        # Atualiza lead_parcial com dono e dados completos
+        lead_parcial["dono"] = dono_limpo
+        lead_parcial["nome"] = nome
+        lead_parcial["nicho_cliente"] = v2.get("nicho_cliente_principal")
+        lead_parcial["instagram"] = v2.get("instagram") or {}
+        lead_parcial["anuncia_meta"] = v2.get("anuncia_meta")
+
+        # Processa TODOS os serviços para este lead
+        servicos_lead = processar_todos_servicos(lead_parcial) if multi_servico else {}
+
+        # Rapport/gancho/msg do serviço principal (para compatibilidade)
+        servico_principal_data = servicos_lead.get(servico_principal.get("id", ""), {})
+        rapport = servico_principal_data.get("rapport") or gerar_rapport(lead_parcial, servico_principal) or v2.get("rapport_humano") or []
+        gancho  = servico_principal_data.get("gancho")  or gerar_gancho_dor(servico_principal) or v2.get("gancho_dor") or []
+        classificacao_icp = servico_principal_data.get("classificacao") or "media"
+        mensagem_wa = servico_principal_data.get("mensagem_wa")
+
+        # ── Ângulo principal de abordagem ────────────────────────────────────
+        _gancho_para_angulo = servico_principal_data.get("gancho") or gancho
+        _gancho_sel = _selecionar_gancho(_gancho_para_angulo, lead_parcial)
+        _angulo, _conteudo_angulo = _extrair_angulo(_gancho_sel)
+        _servico_id = servico_principal.get("id", "") if servico_principal else ""
+        _resultado_alvo = RESULTADO_ALVO_POR_SERVICO.get(
+            _servico_id, "Crescimento via marketing digital"
+        )
+
         final.append({
-            "id": lid,
+            "id": lid + _id_off,
+            "segmento": segmento_lead,
             "nome": nome,
             "razao_social": cnpj.get("razao_social"),
             "nome_fantasia": cnpj.get("nome_fantasia"),
@@ -168,21 +344,33 @@ def consolidar_local() -> tuple[list, dict]:
             "maps_recencia_dias": base.get("recencia_dias"),
             "maps_nrl": base.get("nrl"),
             "tom_respostas_maps": v2.get("tom_respostas_maps"),
-            "nicho_cliente": v2.get("nicho_cliente_principal"),
+            # nicho_cliente: usa v2 (AI) se disponível, senão deriva do segmento
+            "nicho_cliente": v2.get("nicho_cliente_principal") or segmento_lead,
             "tempo_mercado": v2.get("tempo_mercado"),
             "equipe_visivel": v2.get("equipe_visivel"),
+            # instagram: apenas usa v2 se o segmento bate (evita handle de hamburgueria em escola de aviação)
             "instagram": v2.get("instagram") or {},
             "anuncia_meta": v2.get("anuncia_meta"),
             "anuncia_google": v2.get("anuncia_google"),
             "meta_ads_count": v2.get("meta_ads_count", 0),
+            "email": email_by_id.get(lid + _id_off, {}).get("email"),
+            "email_fonte": email_by_id.get(lid + _id_off, {}).get("email_fonte"),
+            "whois_nome": email_by_id.get(lid + _id_off, {}).get("whois_nome"),
             "proposta_valor": v1.get("proposta_valor"),
             "site_gap": v1.get("site_gap"),
-            "rapport_humano": v2.get("rapport_humano") or [],
-            "gancho_dor": v2.get("gancho_dor") or [],
+            "rapport_humano": rapport,
+            "gancho_dor": gancho,
             "score_qualidade_pesquisa": v2.get("score_qualidade_pesquisa"),
             "priority_score": priority_score,
+            "classificacao_icp": classificacao_icp,
+            "mensagem_wa": mensagem_wa,
+            "angulo": _angulo,
+            "conteudo_angulo": _conteudo_angulo,
+            "resultado_alvo": _resultado_alvo,
+            "servicos": servicos_lead,
             "query_origem": base.get("query_origem"),
             "novo_nesta_rodada": True,
+            "data_entrada": datetime.now().strftime("%Y-%m-%d"),
         })
 
     hoje = datetime.now()
@@ -194,6 +382,86 @@ def consolidar_local() -> tuple[list, dict]:
                 lead["tempo_mercado_anos"] = round((hoje - dt).days / 365.25, 1)
             except ValueError:
                 pass
+
+    # ── Merge incremental com leads_final.json existente ────────────────────
+    if OUT.exists():
+        try:
+            with OUT.open("r", encoding="utf-8") as fh:
+                existing = json.load(fh).get("leads", [])
+
+            # Separa por segmento
+            mesmo_seg  = [l for l in existing if (l.get("segmento") or "").lower() == segmento_lead.lower()]
+            outros_seg = [l for l in existing if (l.get("segmento") or "").lower() != segmento_lead.lower()]
+
+            # ── Preserva status/notas/follow-up dos leads do MESMO segmento ──
+            # Monta índice por chave de identificação dos leads EXISTENTES
+            existing_by_key: dict[str, dict] = {}
+            for el in mesmo_seg:
+                k = _chave_lead(el)
+                existing_by_key[k] = el
+
+            # Monta índice por chave dos leads NOVOS (recém-consolidados)
+            new_keys: set[str] = set()
+            for nl in final:
+                k = _chave_lead(nl)
+                new_keys.add(k)
+                if k in existing_by_key:
+                    el = existing_by_key[k]
+                    # Preserva dados de pipeline (não sobrescreve com None)
+                    nl["status"]         = el.get("status", "novo")
+                    nl["notes"]          = el.get("notes") or []
+                    nl["activity"]       = el.get("activity") or []
+                    nl["followup_start"] = el.get("followup_start")
+                    nl["followup_sent"]  = el.get("followup_sent") or {}
+                    nl["loss_reason"]    = el.get("loss_reason")
+                    nl["supabase_id"]    = el.get("supabase_id")
+                    nl["first_seen_at"]  = el.get("first_seen_at")
+                    # Preserva campos de Instagram preenchidos (manual ou automaticamente)
+                    for ig_field in (
+                        "instagram_local_url",
+                        "instagram_dono_url", "instagram_dono_nome", "instagram_dono_bio",
+                        "instagram_decisor_url", "instagram_decisor_nome", "instagram_decisor_bio",
+                    ):
+                        if el.get(ig_field):
+                            nl.setdefault(ig_field, el[ig_field])
+                    nl["novo_nesta_rodada"] = False  # já existia
+                    nl["data_entrada"] = el.get("data_entrada", datetime.now().strftime("%Y-%m-%d"))
+                    # historico_resumido é gravado pelo N8N — nunca sobrescrever
+                    if el.get("historico_resumido"):
+                        nl["historico_resumido"] = el["historico_resumido"]
+                else:
+                    nl["novo_nesta_rodada"] = True   # realmente novo
+                    nl["data_entrada"] = datetime.now().strftime("%Y-%m-%d")
+
+            # Leads que existiam mas NÃO apareceram na nova extração → mantém com flag
+            leads_sumidos = [
+                el for el in mesmo_seg
+                if _chave_lead(el) not in new_keys
+            ]
+            for el in leads_sumidos:
+                el["nao_visto_nesta_rodada"] = True
+                el["novo_nesta_rodada"] = False
+            if leads_sumidos:
+                print(f"  ↩  {len(leads_sumidos)} leads anteriores não encontrados nesta rodada (mantidos)")
+                final.extend(leads_sumidos)
+
+            novos_count    = sum(1 for nl in final if nl.get("novo_nesta_rodada"))
+            repetidos_count = sum(1 for nl in final if not nl.get("novo_nesta_rodada") and not nl.get("nao_visto_nesta_rodada"))
+            print(f"  ✦  {novos_count} leads novos | {repetidos_count} atualizados | {len(leads_sumidos)} mantidos sem reextração")
+
+            # ── Preserva outros segmentos com merge de email ──────────────────
+            for l in outros_seg:
+                if not l.get("email") and l["id"] in email_by_id:
+                    em = email_by_id[l["id"]]
+                    l["email"]       = em.get("email")
+                    l["email_fonte"] = em.get("email_fonte")
+                    l["whois_nome"]  = em.get("whois_nome")
+            if outros_seg:
+                print(f"  Preservando {len(outros_seg)} leads de outros nichos do leads_final.json")
+                final.extend(outros_seg)
+
+        except Exception as e:
+            print(f"  [aviso] Não foi possível ler leads_final.json existente: {e}")
 
     final.sort(key=lambda x: -x["priority_score"])
 
@@ -297,6 +565,9 @@ def consolidar_supabase() -> tuple[list, dict]:
             "anuncia_meta": r.get("anuncia_meta"),
             "anuncia_google": r.get("anuncia_google"),
             "meta_ads_count": r.get("meta_ads_count", 0),
+            "email": email_by_id.get(r["id"], {}).get("email") or r.get("email"),
+            "email_fonte": email_by_id.get(r["id"], {}).get("email_fonte") or r.get("email_fonte"),
+            "whois_nome": email_by_id.get(r["id"], {}).get("whois_nome") or r.get("whois_nome"),
             "rapport_humano": r.get("rapport_humano") or [],
             "gancho_dor": r.get("gancho_dor") or [],
             "priority_score": float(r.get("priority_score") or 0),

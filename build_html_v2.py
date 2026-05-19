@@ -71,6 +71,8 @@ def main() -> int:
     supabase_key = env.get("SUPABASE_ANON_KEY", "").strip()
     agencia = env.get("AGENCIA", "").strip()
     segmento = env.get("SEGMENTO", "geral").strip() or "geral"
+    cidade = env.get("CIDADE", "").strip()
+    agencia_inicial = agencia[0].upper() if agencia else "A"
 
     cloud_on = bool(supabase_url and supabase_key and agencia)
 
@@ -82,6 +84,8 @@ def main() -> int:
     html = html.replace("__SUPABASE_ANON_KEY__", supabase_key)
     html = html.replace("__AGENCIA__", agencia.replace("'", "\\'"))
     html = html.replace("__SEGMENTO__", segmento.replace("'", "\\'"))
+    html = html.replace("__CIDADE__", cidade.replace("'", "\\'"))
+    html = html.replace("__AGENCIA_INICIAL__", agencia_inicial)
 
     OUT.write_text(html, encoding="utf-8")
     kb = OUT.stat().st_size / 1024
